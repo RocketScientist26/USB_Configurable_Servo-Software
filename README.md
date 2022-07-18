@@ -1,4 +1,4 @@
-# Configurable EVTOL Servo - Qt App
+# Configurable EVTOL Servo - Software
 
 Open source servo motor brain, mainly intended for EVTOL aircraft research and development.
 - Built from vastly available cheap electronic components
