@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="icon_load.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.17056189"
+     inkscape:cx="260.90236"
+     inkscape:cy="257.97088"
+     inkscape:window-width="1304"
+     inkscape:window-height="745"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g72066"
+     units="px"
+     width="16px"
+     inkscape:snap-nodes="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-global="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g72066"
+       transform="translate(319.61673,-93.133339)">
+      <rect
+         style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:16;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
+         id="rect6743"
+         width="135.46666"
+         height="135.46652"
+         x="-319.61673"
+         y="93.133339"
+         ry="24.553329"
+         rx="24.553329"
+         inkscape:export-filename="D:\Gaga\Qt Projects\TOR-3_Control\resources\manual_icon.png"
+         inkscape:export-xdpi="384"
+         inkscape:export-ydpi="384" />
+      <path
+         id="rect80087"
+         style="fill:#fffe00;stroke-width:2.92534;stroke-linecap:round;stroke-linejoin:round"
+         d="m -281.51675,136.32545 h 59.26667 c 4.10422,0 7.40834,3.30412 7.40834,7.40834 v 43.39167 c 0,4.10421 -3.30412,7.40833 -7.40834,7.40833 h -59.26667 c -4.10421,0 -7.40833,-3.30412 -7.40833,-7.40833 v -43.39167 c 0,-4.10422 3.30412,-7.40834 7.40833,-7.40834 z"
+         sodipodi:nodetypes="sssssssss" />
+      <path
+         id="rect79796"
+         style="fill:#fffe00;stroke:#4d4d4d;stroke-width:10.5833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -270.88637,161.3263 v -15.875 h -15.875 l 34.87797,-34.1271 34.87798,34.1271 h -15.875 v 15.875 z"
+         sodipodi:nodetypes="cccccccc" />
+    </g>
+  </g>
+</svg>

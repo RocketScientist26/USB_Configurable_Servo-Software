@@ -170,16 +170,14 @@ void MainWindow::on_actionDevice_Signal_Ignore_On_USBAction_triggered(){
 }
 void MainWindow::on_actionAbout_triggered(){
     QMessageBox aboutbox(this);
-    aboutbox.setIconPixmap(QPixmap(":/about.png"));//TBD
+    aboutbox.setIconPixmap(QPixmap(":/Resources/about.svg"));
     aboutbox.setWindowTitle("About");
-    aboutbox.setText("\n"
-                     "Servo Dashboard - Variant \"A\"\n"
+    aboutbox.setText("Servo Dashboard\n"
                      "\n"
-                     "This software is a part of an\n"
+                     "This software is a part of the\n"
                      "open source servo motor project.\n"
                      "\n"
-                     "www.Rocket-Scientist.me"
-                     "\n");
+                     "www.rocket-scientist.me");
     aboutbox.exec();
 }
 void MainWindow::on_actionManual_triggered(){

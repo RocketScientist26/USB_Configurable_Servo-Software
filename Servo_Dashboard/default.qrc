@@ -17,5 +17,14 @@
         <file>Resources/Latin Modern Mono/lmmonoproplt10-oblique.otf</file>
         <file>Resources/Latin Modern Mono/lmmonoproplt10-regular.otf</file>
         <file>Resources/Latin Modern Mono/lmmonoslant10-regular.otf</file>
+        <file>Resources/icon.svg</file>
+        <file>Resources/icon_manual.svg</file>
+        <file>Resources/icon_about.svg</file>
+        <file>Resources/icon_close.svg</file>
+        <file>Resources/icon_load.svg</file>
+        <file>Resources/icon_revert.svg</file>
+        <file>Resources/icon_save.svg</file>
+        <file>Resources/icon_store.svg</file>
+        <file>Resources/about.svg</file>
     </qresource>
 </RCC>

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Servo Dashboard</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="default.qrc">
+    <normaloff>:/Resources/icon.svg</normaloff>:/Resources/icon.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox_Motor">
     <property name="enabled">
@@ -54,7 +58,6 @@
      <property name="font">
       <font>
        <pointsize>8</pointsize>
-       <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
       </font>
@@ -74,7 +77,6 @@
       <property name="font">
        <font>
         <pointsize>8</pointsize>
-        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -95,7 +97,6 @@
       <property name="font">
        <font>
         <pointsize>8</pointsize>
-        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -260,7 +261,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -278,7 +278,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -300,7 +299,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -319,7 +317,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -341,7 +338,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -474,7 +470,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -495,7 +490,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -517,7 +511,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -545,7 +538,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -564,7 +556,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -583,7 +574,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -605,7 +595,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -624,7 +613,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -643,7 +631,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -662,7 +649,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -681,7 +667,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -706,7 +691,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -731,7 +715,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -910,7 +893,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -928,7 +910,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -950,7 +931,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -969,7 +949,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -988,7 +967,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1007,7 +985,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1026,7 +1003,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1045,7 +1021,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1064,7 +1039,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1086,7 +1060,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1108,7 +1081,6 @@
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1580,7 +1552,7 @@
      <x>0</x>
      <y>0</y>
      <width>1041</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1614,6 +1586,10 @@
    <property name="enabled">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_load.svg</normaloff>:/Resources/icon_load.svg</iconset>
+   </property>
    <property name="text">
     <string>Load configuration from...</string>
    </property>
@@ -1625,6 +1601,10 @@
    <property name="enabled">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_save.svg</normaloff>:/Resources/icon_save.svg</iconset>
+   </property>
    <property name="text">
     <string>Save configuration as...</string>
    </property>
@@ -1633,6 +1613,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_close.svg</normaloff>:/Resources/icon_close.svg</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -1641,6 +1625,10 @@
    </property>
   </action>
   <action name="actionManual">
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_manual.svg</normaloff>:/Resources/icon_manual.svg</iconset>
+   </property>
    <property name="text">
     <string>Manual</string>
    </property>
@@ -1649,6 +1637,10 @@
    </property>
   </action>
   <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_about.svg</normaloff>:/Resources/icon_about.svg</iconset>
+   </property>
    <property name="text">
     <string>About</string>
    </property>
@@ -1705,6 +1697,10 @@
    <property name="enabled">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_store.svg</normaloff>:/Resources/icon_store.svg</iconset>
+   </property>
    <property name="text">
     <string>Store configuration</string>
    </property>
@@ -1715,6 +1711,10 @@
   <action name="actionRevert_flash">
    <property name="enabled">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="default.qrc">
+     <normaloff>:/Resources/icon_revert.svg</normaloff>:/Resources/icon_revert.svg</iconset>
    </property>
    <property name="text">
     <string>Revert from flash</string>
@@ -1773,7 +1773,9 @@
   <tabstop>spinBox_PID_Test_Time</tabstop>
   <tabstop>pushButton_PID_Test_Oscillate</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="default.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>actionExit</sender>
