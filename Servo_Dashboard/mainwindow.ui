@@ -244,7 +244,7 @@
       <double>2.000000000000000</double>
      </property>
      <property name="maximum">
-      <double>10.000000000000000</double>
+      <double>16.000000000000000</double>
      </property>
      <property name="singleStep">
       <double>0.100000000000000</double>
@@ -359,13 +359,13 @@
       <number>1</number>
      </property>
      <property name="minimum">
-      <double>8.000000000000000</double>
+      <double>20.000000000000000</double>
      </property>
      <property name="maximum">
-      <double>100.000000000000000</double>
+      <double>200.000000000000000</double>
      </property>
      <property name="value">
-      <double>18.000000000000000</double>
+      <double>20.000000000000000</double>
      </property>
     </widget>
     <widget class="QCheckBox" name="checkBox_Device_Ignore_Signal_On_USB">
@@ -757,7 +757,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>2.000000000000000</double>
+      <double>1.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_P_1">
@@ -818,7 +818,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>12.000000000000000</double>
+      <double>3.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_D_1">
@@ -1091,7 +1091,7 @@
        <number>60</number>
       </property>
       <property name="value">
-       <number>5</number>
+       <number>3</number>
       </property>
      </widget>
     </widget>
@@ -1211,7 +1211,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>12.000000000000000</double>
+      <double>3.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_I_2">
@@ -1256,7 +1256,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>2.000000000000000</double>
+      <double>1.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_P_2">
@@ -1317,7 +1317,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>12.000000000000000</double>
+      <double>3.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_I_3">
@@ -1349,7 +1349,7 @@
       <double>100.000000000000000</double>
      </property>
      <property name="value">
-      <double>2.000000000000000</double>
+      <double>1.000000000000000</double>
      </property>
     </widget>
     <widget class="QLabel" name="label_PID_P_3">

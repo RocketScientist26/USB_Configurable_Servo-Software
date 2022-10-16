@@ -5,8 +5,8 @@
 #include <QFile>
 #include <QMessageBox>
 
-#define FILE_CRC_PLACEHOLDER char(0)
-#define FILE_LENGTH 72
+#define FILE_CRC_PADDING char(0)
+#define FILE_LENGTH 70
 
 QFile file;
 QByteArray file_data;
@@ -75,14 +75,12 @@ void MainWindow::on_actionSave_Configuration_to_file_triggered(){
             *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_PID_D_3->value();
             file_data.append(&(*(char *)&file_tmp[0]), 4);
             *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_PID_Split_1->value();
-            file_data.append(&(*(char *)&file_tmp[0]), 2);
+            file_data.append(&(*(char *)&file_tmp[0]), 4);
             *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_PID_Split_2->value();
-            file_data.append(&(*(char *)&file_tmp[0]), 2);
+            file_data.append(&(*(char *)&file_tmp[0]), 4);
             *(uint16_t *)&file_tmp[0] = (uint16_t)ui->spinBox_PID_Sampling_Hz->value();
             file_data.append(&(*(char *)&file_tmp[0]), 2);
-            file_data.append(FILE_CRC_PLACEHOLDER);
-            file_data.append(FILE_CRC_PLACEHOLDER);
-            file_data.append(FILE_CRC_PLACEHOLDER);
+            file_data.append(FILE_CRC_PADDING);
 
             uint32_t file_crc = CRC32_Get((uint32_t *)&file_data.data()[0], file_data.length() / 4);
             file_data.append(&(*(char *)&file_crc), 4);

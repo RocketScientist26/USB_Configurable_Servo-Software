@@ -149,17 +149,11 @@ void MainWindow::on_actionSignal_Test_HoldAction_triggered(){
 }
 void MainWindow::on_actionDevice_Signal_Ignore_On_USBAction_triggered(){
     if(ui->checkBox_Device_Ignore_Signal_On_USB->isChecked()){
-        ui->actionUpdate_flash->setEnabled(true);
-        ui->actionRevert_flash->setEnabled(true);
-        ui->actionLoad_configuration->setEnabled(true);
         ui->pushButton_Motor_Test_Backward->setEnabled(true);
         ui->pushButton_Motor_Test_Forward->setEnabled(true);
         ui->pushButton_Signal_Test_Hold->setEnabled(true);
         ui->pushButton_PID_Test_Oscillate->setEnabled(true);
     }else{
-        ui->actionUpdate_flash->setEnabled(false);
-        ui->actionRevert_flash->setEnabled(false);
-        ui->actionLoad_configuration->setEnabled(false);
         ui->pushButton_Motor_Test_Backward->setEnabled(false);
         ui->pushButton_Motor_Test_Forward->setEnabled(false);
         ui->pushButton_Signal_Test_Hold->setEnabled(false);
