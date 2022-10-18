@@ -37,7 +37,7 @@ void MainWindow::UI_Clear(){
     ui->spinBox_PID_Test_Time->setValue(5);
     ui->radioButton_LED_Signal->setChecked(true);
     ui->doubleSpinBox_Signal_Length->setValue(2);
-    ui->doubleSpinBox_Signal_Timeout->setValue(18);
+    ui->spinBox_Signal_Timeout->setValue(25);
     ui->doubleSpinBox_Signal_Test_Position->setValue(50);
     ui->checkBox_Motor_Invert->setChecked(false);
     ui->horizontalSlider_Motor_Max_Power->setValue(100);

@@ -40,7 +40,7 @@ void MainWindow::on_actionSave_Configuration_to_file_triggered(){
             }
             *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_Signal_Length->value();
             file_data.append(&(*(char *)&file_tmp[0]), 4);
-            *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_Signal_Timeout->value();
+            *(uint32_t *)&file_tmp[0] = (uint32_t)ui->spinBox_Signal_Timeout->value();
             file_data.append(&(*(char *)&file_tmp[0]), 4);
             if(ui->radioButton_LED_Off->isChecked()){
                 file_data.append(char(0));
@@ -137,7 +137,7 @@ void MainWindow::on_actionLoad_configuration_triggered(){
                     ui->checkBox_Device_Ignore_Signal_On_USB->setChecked(false);
                 }
                 ui->doubleSpinBox_Signal_Length->setValue(*(float *)&file_data.data()[9]);
-                ui->doubleSpinBox_Signal_Timeout->setValue(*(float *)&file_data.data()[13]);
+                ui->spinBox_Signal_Timeout->setValue(*(uint32_t *)&file_data.data()[13]);
                 switch(file_data.at(17)){
                     case 0:
                         ui->radioButton_LED_Off->setChecked(true);

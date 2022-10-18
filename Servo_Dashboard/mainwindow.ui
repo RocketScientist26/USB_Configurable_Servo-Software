@@ -346,28 +346,6 @@
       </property>
      </widget>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Timeout">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>60</y>
-       <width>51</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="decimals">
-      <number>1</number>
-     </property>
-     <property name="minimum">
-      <double>6.000000000000000</double>
-     </property>
-     <property name="maximum">
-      <double>200.000000000000000</double>
-     </property>
-     <property name="value">
-      <double>25.000000000000000</double>
-     </property>
-    </widget>
     <widget class="QCheckBox" name="checkBox_Device_Ignore_Signal_On_USB">
      <property name="enabled">
       <bool>false</bool>
@@ -385,6 +363,25 @@
      </property>
      <property name="checked">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox_Signal_Timeout">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>51</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="minimum">
+      <number>6</number>
+     </property>
+     <property name="maximum">
+      <number>200</number>
+     </property>
+     <property name="value">
+      <number>25</number>
      </property>
     </widget>
    </widget>
@@ -1747,7 +1744,6 @@
   <tabstop>pushButton_Motor_Test_Backward</tabstop>
   <tabstop>pushButton_Motor_Test_Forward</tabstop>
   <tabstop>doubleSpinBox_Signal_Length</tabstop>
-  <tabstop>doubleSpinBox_Signal_Timeout</tabstop>
   <tabstop>checkBox_Device_Ignore_Signal_On_USB</tabstop>
   <tabstop>doubleSpinBox_Signal_Test_Position</tabstop>
   <tabstop>pushButton_Signal_Test_Hold</tabstop>

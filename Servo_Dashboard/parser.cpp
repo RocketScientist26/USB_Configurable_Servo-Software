@@ -31,7 +31,7 @@ void MainWindow::Parser_Parse_Config(){
         ui->checkBox_Device_Ignore_Signal_On_USB->setChecked(false);
     }
     ui->doubleSpinBox_Signal_Length->setValue(*(float *)&usb_data_received.data()[9]);
-    ui->doubleSpinBox_Signal_Timeout->setValue(*(float *)&usb_data_received.data()[13]);
+    ui->spinBox_Signal_Timeout->setValue((int)(*(uint32_t *)&usb_data_received.data()[13]));
     switch(usb_data_received.at(17)){
         case 0:
             ui->radioButton_LED_Off->setChecked(true);
@@ -101,7 +101,7 @@ void MainWindow::Parser_Request_Status(){
         *(uint8_t *)&usb_data_transmit.data()[8] = 0;
     }
     *(float *)&usb_data_transmit.data()[9] = ui->doubleSpinBox_Signal_Length->value();
-    *(float *)&usb_data_transmit.data()[13] = ui->doubleSpinBox_Signal_Timeout->value();
+    *(uint32_t *)&usb_data_transmit.data()[13] = ui->spinBox_Signal_Timeout->value();
     if(ui->radioButton_LED_Position_Change->isChecked()){
         *(uint8_t *)&usb_data_transmit.data()[17] = 3;
     }else if(ui->radioButton_LED_Signal->isChecked()){
