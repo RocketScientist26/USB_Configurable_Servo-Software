@@ -58,6 +58,9 @@ void MainWindow::Graph_Clear(){
     actual_position_series->clear();
     motor_power_series->clear();
     graph_act_x = 0;
+    set_position_series->setName("Set position: 000.0 %");
+    actual_position_series->setName("Actual position: 000.0 %");
+    motor_power_series->setName("Motor power: +000.0 %");
 }
 void MainWindow::Graph_Append(float setpos, float actpos, int16_t mpwr){
     if(usb_poll_time_ms < USB_STATUS_POLL_MS){
