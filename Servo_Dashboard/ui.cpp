@@ -36,7 +36,8 @@ void MainWindow::UI_Clear(){
     ui->doubleSpinBox_PID_Test_Pos_B->setValue(75);
     ui->spinBox_PID_Test_Time->setValue(5);
     ui->radioButton_LED_Signal->setChecked(true);
-    ui->doubleSpinBox_Signal_Length->setValue(2);
+    ui->doubleSpinBox_Signal_Min->setValue(1);
+    ui->doubleSpinBox_Signal_Max->setValue(2);
     ui->spinBox_Signal_Timeout->setValue(25);
     ui->doubleSpinBox_Signal_Test_Position->setValue(50);
     ui->checkBox_Motor_Invert->setChecked(false);
@@ -146,6 +147,10 @@ void MainWindow::on_actionSignal_Test_HoldAction_triggered(){
         ui->actionRevert_flash->setEnabled(true);
         ui->actionLoad_configuration->setEnabled(true);
     }
+}
+void MainWindow::on_actionSignal_Min_MaxAction_triggered(){
+    ui->doubleSpinBox_Signal_Min->setMaximum(ui->doubleSpinBox_Signal_Max->value() - 0.4f); //!TBD
+    ui->doubleSpinBox_Signal_Max->setMinimum(ui->doubleSpinBox_Signal_Min->value() + 0.4f); //!TBD
 }
 void MainWindow::on_actionDevice_Signal_Ignore_On_USBAction_triggered(){
     if(ui->checkBox_Device_Ignore_Signal_On_USB->isChecked()){

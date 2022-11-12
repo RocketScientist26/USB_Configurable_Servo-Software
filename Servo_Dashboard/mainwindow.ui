@@ -176,20 +176,20 @@
     <property name="title">
      <string>Signal in</string>
     </property>
-    <widget class="QLabel" name="label_Signal_Length">
+    <widget class="QLabel" name="label_Signal_Min">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>30</y>
-       <width>51</width>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>Signal:</string>
+      <string>Min:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_Signal_Length_Ms">
+    <widget class="QLabel" name="label_Signal_Min_Ms">
      <property name="geometry">
       <rect>
        <x>130</x>
@@ -206,7 +206,7 @@
      <property name="geometry">
       <rect>
        <x>130</x>
-       <y>60</y>
+       <y>100</y>
        <width>16</width>
        <height>22</height>
       </rect>
@@ -219,7 +219,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
+       <y>100</y>
        <width>48</width>
        <height>22</height>
       </rect>
@@ -228,7 +228,7 @@
       <string>Timeout:</string>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Length">
+    <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Min">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -238,24 +238,27 @@
       </rect>
      </property>
      <property name="decimals">
-      <number>1</number>
+      <number>2</number>
      </property>
      <property name="minimum">
-      <double>2.000000000000000</double>
+      <double>0.100000000000000</double>
      </property>
      <property name="maximum">
-      <double>5.000000000000000</double>
+      <double>2.300000000000000</double>
      </property>
      <property name="singleStep">
       <double>0.100000000000000</double>
+     </property>
+     <property name="value">
+      <double>1.000000000000000</double>
      </property>
     </widget>
     <widget class="QGroupBox" name="groupBox_Signal_Test">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>170</x>
        <y>10</y>
-       <width>161</width>
+       <width>151</width>
        <height>81</height>
       </rect>
      </property>
@@ -270,9 +273,9 @@
      <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Test_Position">
       <property name="geometry">
        <rect>
-        <x>65</x>
+        <x>66</x>
         <y>20</y>
-        <width>62</width>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -311,7 +314,7 @@
        <rect>
         <x>20</x>
         <y>50</y>
-        <width>121</width>
+        <width>111</width>
         <height>22</height>
        </rect>
       </property>
@@ -330,7 +333,7 @@
      <widget class="QLabel" name="label_Signal_Test_Position_Pct">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>20</y>
         <width>16</width>
         <height>22</height>
@@ -352,14 +355,14 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>170</x>
        <y>100</y>
-       <width>231</width>
+       <width>151</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
-      <string>Ignore control signal when USB  connected</string>
+      <string>Ignore signal on USB</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -369,7 +372,7 @@
      <property name="geometry">
       <rect>
        <x>70</x>
-       <y>60</y>
+       <y>100</y>
        <width>51</width>
        <height>22</height>
       </rect>
@@ -382,6 +385,57 @@
      </property>
      <property name="value">
       <number>25</number>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Max">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>51</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="decimals">
+      <number>2</number>
+     </property>
+     <property name="minimum">
+      <double>0.500000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>2.700000000000000</double>
+     </property>
+     <property name="singleStep">
+      <double>0.100000000000000</double>
+     </property>
+     <property name="value">
+      <double>2.000000000000000</double>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Signal_Max_Ms">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>60</y>
+       <width>21</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ms</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Signal_Max">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>31</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Max:</string>
      </property>
     </widget>
    </widget>
@@ -425,9 +479,6 @@
      <property name="text">
       <string>Power</string>
      </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_LED_Signal">
      <property name="geometry">
@@ -440,6 +491,9 @@
      </property>
      <property name="text">
       <string>Signal</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_LED_Position_Change">
@@ -1720,6 +1774,14 @@
     <string>Ctrl+R</string>
    </property>
   </action>
+  <action name="actionSignal_Min_MaxAction">
+   <property name="text">
+    <string>Signal_Min_MaxAction</string>
+   </property>
+   <property name="toolTip">
+    <string>Signal_Min_MaxAction</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1743,7 +1805,7 @@
   <tabstop>checkBox_Motor_Invert</tabstop>
   <tabstop>pushButton_Motor_Test_Backward</tabstop>
   <tabstop>pushButton_Motor_Test_Forward</tabstop>
-  <tabstop>doubleSpinBox_Signal_Length</tabstop>
+  <tabstop>doubleSpinBox_Signal_Min</tabstop>
   <tabstop>checkBox_Device_Ignore_Signal_On_USB</tabstop>
   <tabstop>doubleSpinBox_Signal_Test_Position</tabstop>
   <tabstop>pushButton_Signal_Test_Hold</tabstop>
@@ -1974,6 +2036,38 @@
     <hint type="sourcelabel">
      <x>355</x>
      <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_Signal_Min</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>actionSignal_Min_MaxAction</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>775</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>doubleSpinBox_Signal_Max</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>actionSignal_Min_MaxAction</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>775</x>
+     <y>402</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>

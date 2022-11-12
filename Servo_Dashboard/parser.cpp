@@ -30,9 +30,10 @@ void MainWindow::Parser_Parse_Config(){
     }else{
         ui->checkBox_Device_Ignore_Signal_On_USB->setChecked(false);
     }
-    ui->doubleSpinBox_Signal_Length->setValue(*(float *)&usb_data_received.data()[9]);
-    ui->spinBox_Signal_Timeout->setValue((int)(*(uint32_t *)&usb_data_received.data()[13]));
-    switch(usb_data_received.at(17)){
+    ui->doubleSpinBox_Signal_Min->setValue(*(float *)&usb_data_received.data()[9]);
+    ui->doubleSpinBox_Signal_Max->setValue(*(float *)&usb_data_received.data()[13]);
+    ui->spinBox_Signal_Timeout->setValue((int)(*(uint32_t *)&usb_data_received.data()[17]));
+    switch(usb_data_received.at(21)){
         case 0:
             ui->radioButton_LED_Off->setChecked(true);
             ui->radioButton_LED_Power->setChecked(false);
@@ -58,29 +59,29 @@ void MainWindow::Parser_Parse_Config(){
             ui->radioButton_LED_Position_Change->setChecked(true);
         break;
     }
-    if(usb_data_received.at(18)){
+    if(usb_data_received.at(22)){
         ui->checkBox_PID_Pon->setChecked(false);
     }else{
         ui->checkBox_PID_Pon->setChecked(true);
     }
-    ui->doubleSpinBox_PID_P_1->setValue(*(float *)&usb_data_received.data()[19]);
-    ui->doubleSpinBox_PID_I_1->setValue(*(float *)&usb_data_received.data()[23]);
-    ui->doubleSpinBox_PID_D_1->setValue(*(float *)&usb_data_received.data()[27]);
-    ui->doubleSpinBox_PID_P_2->setValue(*(float *)&usb_data_received.data()[31]);
-    ui->doubleSpinBox_PID_I_2->setValue(*(float *)&usb_data_received.data()[35]);
-    ui->doubleSpinBox_PID_D_2->setValue(*(float *)&usb_data_received.data()[39]);
-    ui->doubleSpinBox_PID_P_3->setValue(*(float *)&usb_data_received.data()[43]);
-    ui->doubleSpinBox_PID_I_3->setValue(*(float *)&usb_data_received.data()[47]);
-    ui->doubleSpinBox_PID_D_3->setValue(*(float *)&usb_data_received.data()[51]);
+    ui->doubleSpinBox_PID_P_1->setValue(*(float *)&usb_data_received.data()[23]);
+    ui->doubleSpinBox_PID_I_1->setValue(*(float *)&usb_data_received.data()[27]);
+    ui->doubleSpinBox_PID_D_1->setValue(*(float *)&usb_data_received.data()[31]);
+    ui->doubleSpinBox_PID_P_2->setValue(*(float *)&usb_data_received.data()[35]);
+    ui->doubleSpinBox_PID_I_2->setValue(*(float *)&usb_data_received.data()[39]);
+    ui->doubleSpinBox_PID_D_2->setValue(*(float *)&usb_data_received.data()[43]);
+    ui->doubleSpinBox_PID_P_3->setValue(*(float *)&usb_data_received.data()[47]);
+    ui->doubleSpinBox_PID_I_3->setValue(*(float *)&usb_data_received.data()[51]);
+    ui->doubleSpinBox_PID_D_3->setValue(*(float *)&usb_data_received.data()[55]);
 
     //Convert steps to pecentage
     float single_p = (((float)ui->spinBox_Potentiometer_End_Margin->value() - (float)ui->spinBox_Potentiometer_Start_Margin->value()) / 100.0f);
-    float split_1 = (float)(*(uint16_t *)&usb_data_received.data()[55]) - (float)ui->spinBox_Potentiometer_Start_Margin->value();
-    float split_2 = (float)(*(uint16_t *)&usb_data_received.data()[57]) - (float)ui->spinBox_Potentiometer_Start_Margin->value();
+    float split_1 = (float)(*(uint16_t *)&usb_data_received.data()[59]) - (float)ui->spinBox_Potentiometer_Start_Margin->value();
+    float split_2 = (float)(*(uint16_t *)&usb_data_received.data()[61]) - (float)ui->spinBox_Potentiometer_Start_Margin->value();
     ui->doubleSpinBox_PID_Split_1->setValue(split_1 / single_p);
     ui->doubleSpinBox_PID_Split_2->setValue(split_2 / single_p);
 
-    ui->spinBox_PID_Sampling_Hz->setValue(1000/usb_data_received.at(59));//Convert ms to Hz
+    ui->spinBox_PID_Sampling_Hz->setValue(1000/usb_data_received.at(63));//Convert ms to Hz
 }
 void MainWindow::Parser_Request_Status(){
     usb_data_transmit.clear();
@@ -100,64 +101,65 @@ void MainWindow::Parser_Request_Status(){
     }else{
         *(uint8_t *)&usb_data_transmit.data()[8] = 0;
     }
-    *(float *)&usb_data_transmit.data()[9] = ui->doubleSpinBox_Signal_Length->value();
-    *(uint32_t *)&usb_data_transmit.data()[13] = ui->spinBox_Signal_Timeout->value();
+    *(float *)&usb_data_transmit.data()[9] = ui->doubleSpinBox_Signal_Min->value();
+    *(float *)&usb_data_transmit.data()[13] = ui->doubleSpinBox_Signal_Max->value();
+    *(uint32_t *)&usb_data_transmit.data()[17] = ui->spinBox_Signal_Timeout->value();
     if(ui->radioButton_LED_Position_Change->isChecked()){
-        *(uint8_t *)&usb_data_transmit.data()[17] = 3;
+        *(uint8_t *)&usb_data_transmit.data()[21] = 3;
     }else if(ui->radioButton_LED_Signal->isChecked()){
-        *(uint8_t *)&usb_data_transmit.data()[17] = 2;
+        *(uint8_t *)&usb_data_transmit.data()[21] = 2;
     }else if(ui->radioButton_LED_Power->isChecked()){
-        *(uint8_t *)&usb_data_transmit.data()[17] = 1;
+        *(uint8_t *)&usb_data_transmit.data()[21] = 1;
     }else{
-        *(uint8_t *)&usb_data_transmit.data()[17] = 0;
+        *(uint8_t *)&usb_data_transmit.data()[21] = 0;
     }
     if(ui->checkBox_PID_Pon->isChecked()){
-        *(uint8_t *)&usb_data_transmit.data()[18] = 0;
+        *(uint8_t *)&usb_data_transmit.data()[22] = 0;
     }else{
-        *(uint8_t *)&usb_data_transmit.data()[18] = 1;
+        *(uint8_t *)&usb_data_transmit.data()[22] = 1;
     }
-    *(float *)&usb_data_transmit.data()[19] = ui->doubleSpinBox_PID_P_1->value();
-    *(float *)&usb_data_transmit.data()[23] = ui->doubleSpinBox_PID_I_1->value();
-    *(float *)&usb_data_transmit.data()[27] = ui->doubleSpinBox_PID_D_1->value();
-    *(float *)&usb_data_transmit.data()[31] = ui->doubleSpinBox_PID_P_2->value();
-    *(float *)&usb_data_transmit.data()[35] = ui->doubleSpinBox_PID_I_2->value();
-    *(float *)&usb_data_transmit.data()[39] = ui->doubleSpinBox_PID_D_2->value();
-    *(float *)&usb_data_transmit.data()[43] = ui->doubleSpinBox_PID_P_3->value();
-    *(float *)&usb_data_transmit.data()[47] = ui->doubleSpinBox_PID_I_3->value();
-    *(float *)&usb_data_transmit.data()[51] = ui->doubleSpinBox_PID_D_3->value();
-    *(uint16_t *)&usb_data_transmit.data()[55] = (uint16_t)(((float)ui->doubleSpinBox_PID_Split_1->value() *
+    *(float *)&usb_data_transmit.data()[23] = ui->doubleSpinBox_PID_P_1->value();
+    *(float *)&usb_data_transmit.data()[27] = ui->doubleSpinBox_PID_I_1->value();
+    *(float *)&usb_data_transmit.data()[31] = ui->doubleSpinBox_PID_D_1->value();
+    *(float *)&usb_data_transmit.data()[35] = ui->doubleSpinBox_PID_P_2->value();
+    *(float *)&usb_data_transmit.data()[39] = ui->doubleSpinBox_PID_I_2->value();
+    *(float *)&usb_data_transmit.data()[43] = ui->doubleSpinBox_PID_D_2->value();
+    *(float *)&usb_data_transmit.data()[47] = ui->doubleSpinBox_PID_P_3->value();
+    *(float *)&usb_data_transmit.data()[51] = ui->doubleSpinBox_PID_I_3->value();
+    *(float *)&usb_data_transmit.data()[55] = ui->doubleSpinBox_PID_D_3->value();
+    *(uint16_t *)&usb_data_transmit.data()[59] = (uint16_t)(((float)ui->doubleSpinBox_PID_Split_1->value() *
                                                              (((float)ui->spinBox_Potentiometer_End_Margin->value() - (float)ui->spinBox_Potentiometer_Start_Margin->value()) / 100.0f))
                                                             + (float)ui->spinBox_Potentiometer_Start_Margin->value());
-    *(uint16_t *)&usb_data_transmit.data()[57] = (uint16_t)(((float)ui->doubleSpinBox_PID_Split_2->value() *
+    *(uint16_t *)&usb_data_transmit.data()[61] = (uint16_t)(((float)ui->doubleSpinBox_PID_Split_2->value() *
                                                              (((float)ui->spinBox_Potentiometer_End_Margin->value() - (float)ui->spinBox_Potentiometer_Start_Margin->value()) / 100.0f))
                                                             + (float)ui->spinBox_Potentiometer_Start_Margin->value());
-    *(uint8_t *)&usb_data_transmit.data()[59] = 1000 / ui->spinBox_PID_Sampling_Hz->value();//Convert Hz to ms
+    *(uint8_t *)&usb_data_transmit.data()[63] = 1000 / ui->spinBox_PID_Sampling_Hz->value();//Convert Hz to ms
     float pos = (((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f) * ui->doubleSpinBox_Signal_Test_Position->value()) + ui->spinBox_Potentiometer_Start_Margin->value();
     float pos_a = (((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f) * ui->doubleSpinBox_PID_Test_Pos_A->value()) + ui->spinBox_Potentiometer_Start_Margin->value();
     float pos_b = (((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f) * ui->doubleSpinBox_PID_Test_Pos_B->value()) + ui->spinBox_Potentiometer_Start_Margin->value();
     if(ui->pushButton_Signal_Test_Hold->isChecked()){
-        *(float *)&usb_data_transmit.data()[60] = pos;
-        *(uint8_t *)&usb_data_transmit.data()[64] = 1;
+        *(float *)&usb_data_transmit.data()[64] = pos;
+        *(uint8_t *)&usb_data_transmit.data()[68] = 1;
     }else if(ui->pushButton_PID_Test_Oscillate->isChecked()){
         if(ui_oscillate_stage == 0){
-            *(float *)&usb_data_transmit.data()[60] = pos_a;
+            *(float *)&usb_data_transmit.data()[64] = pos_a;
         }else{
-            *(float *)&usb_data_transmit.data()[60] = pos_b;
+            *(float *)&usb_data_transmit.data()[64] = pos_b;
         }
-        *(uint8_t *)&usb_data_transmit.data()[64] = 1;
+        *(uint8_t *)&usb_data_transmit.data()[68] = 1;
     }else{
-        *(float *)&usb_data_transmit.data()[60] = 0;
-        *(uint8_t *)&usb_data_transmit.data()[64] = 0;
+        *(float *)&usb_data_transmit.data()[64] = 0;
+        *(uint8_t *)&usb_data_transmit.data()[68] = 0;
     }
     if(ui->pushButton_Motor_Test_Backward->isDown()){
-        *(uint8_t *)&usb_data_transmit.data()[65] = 1;
+        *(uint8_t *)&usb_data_transmit.data()[69] = 1;
     }else if(ui->pushButton_Motor_Test_Forward->isDown()){
-        *(uint8_t *)&usb_data_transmit.data()[65] = 2;
+        *(uint8_t *)&usb_data_transmit.data()[69] = 2;
     }else{
-        *(uint8_t *)&usb_data_transmit.data()[65] = 0;
+        *(uint8_t *)&usb_data_transmit.data()[69] = 0;
     }
-    *(uint8_t *)&usb_data_transmit.data()[66] = PARSER_CRC_PADDING;
-    *(uint8_t *)&usb_data_transmit.data()[67] = PARSER_CRC_PADDING;
+    *(uint8_t *)&usb_data_transmit.data()[70] = PARSER_CRC_PADDING;
+    *(uint8_t *)&usb_data_transmit.data()[71] = PARSER_CRC_PADDING;
     USB_Send();
 }
 void MainWindow::Parser_Parse_Status(){

@@ -6,7 +6,7 @@
 #include <QMessageBox>
 
 #define FILE_CRC_PADDING char(0)
-#define FILE_LENGTH 70
+#define FILE_LENGTH 74
 
 QFile file;
 QByteArray file_data;
@@ -38,7 +38,9 @@ void MainWindow::on_actionSave_Configuration_to_file_triggered(){
             }else{
                 file_data.append(char(0));
             }
-            *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_Signal_Length->value();
+            *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_Signal_Min->value();
+            file_data.append(&(*(char *)&file_tmp[0]), 4);
+            *(float *)&file_tmp[0] = (float)ui->doubleSpinBox_Signal_Max->value();
             file_data.append(&(*(char *)&file_tmp[0]), 4);
             *(uint32_t *)&file_tmp[0] = (uint32_t)ui->spinBox_Signal_Timeout->value();
             file_data.append(&(*(char *)&file_tmp[0]), 4);
@@ -136,9 +138,10 @@ void MainWindow::on_actionLoad_configuration_triggered(){
                 }else{
                     ui->checkBox_Device_Ignore_Signal_On_USB->setChecked(false);
                 }
-                ui->doubleSpinBox_Signal_Length->setValue(*(float *)&file_data.data()[9]);
-                ui->spinBox_Signal_Timeout->setValue(*(uint32_t *)&file_data.data()[13]);
-                switch(file_data.at(17)){
+                ui->doubleSpinBox_Signal_Min->setValue(*(float *)&file_data.data()[9]);
+                ui->doubleSpinBox_Signal_Max->setValue(*(float *)&file_data.data()[13]);
+                ui->spinBox_Signal_Timeout->setValue(*(uint32_t *)&file_data.data()[17]);
+                switch(file_data.at(21)){
                     case 0:
                         ui->radioButton_LED_Off->setChecked(true);
                         ui->radioButton_LED_Power->setChecked(false);
@@ -164,23 +167,23 @@ void MainWindow::on_actionLoad_configuration_triggered(){
                         ui->radioButton_LED_Position_Change->setChecked(true);
                     break;
                 }
-                if(file_data.at(18)){
+                if(file_data.at(22)){
                     ui->checkBox_PID_Pon->setChecked(false);
                 }else{
                     ui->checkBox_PID_Pon->setChecked(true);
                 }
-                ui->doubleSpinBox_PID_P_1->setValue(*(float *)&file_data.data()[19]);
-                ui->doubleSpinBox_PID_I_1->setValue(*(float *)&file_data.data()[23]);
-                ui->doubleSpinBox_PID_D_1->setValue(*(float *)&file_data.data()[27]);
-                ui->doubleSpinBox_PID_P_2->setValue(*(float *)&file_data.data()[31]);
-                ui->doubleSpinBox_PID_I_2->setValue(*(float *)&file_data.data()[35]);
-                ui->doubleSpinBox_PID_D_2->setValue(*(float *)&file_data.data()[39]);
-                ui->doubleSpinBox_PID_P_3->setValue(*(float *)&file_data.data()[43]);
-                ui->doubleSpinBox_PID_I_3->setValue(*(float *)&file_data.data()[47]);
-                ui->doubleSpinBox_PID_D_3->setValue(*(float *)&file_data.data()[51]);
-                ui->doubleSpinBox_PID_Split_1->setValue(*(float *)&file_data.data()[55]);
-                ui->doubleSpinBox_PID_Split_2->setValue(*(float *)&file_data.data()[59]);
-                ui->spinBox_PID_Sampling_Hz->setValue(*(uint16_t *)&file_data.data()[63]);
+                ui->doubleSpinBox_PID_P_1->setValue(*(float *)&file_data.data()[23]);
+                ui->doubleSpinBox_PID_I_1->setValue(*(float *)&file_data.data()[27]);
+                ui->doubleSpinBox_PID_D_1->setValue(*(float *)&file_data.data()[31]);
+                ui->doubleSpinBox_PID_P_2->setValue(*(float *)&file_data.data()[35]);
+                ui->doubleSpinBox_PID_I_2->setValue(*(float *)&file_data.data()[39]);
+                ui->doubleSpinBox_PID_D_2->setValue(*(float *)&file_data.data()[43]);
+                ui->doubleSpinBox_PID_P_3->setValue(*(float *)&file_data.data()[47]);
+                ui->doubleSpinBox_PID_I_3->setValue(*(float *)&file_data.data()[51]);
+                ui->doubleSpinBox_PID_D_3->setValue(*(float *)&file_data.data()[55]);
+                ui->doubleSpinBox_PID_Split_1->setValue(*(float *)&file_data.data()[59]);
+                ui->doubleSpinBox_PID_Split_2->setValue(*(float *)&file_data.data()[63]);
+                ui->spinBox_PID_Sampling_Hz->setValue(*(uint16_t *)&file_data.data()[67]);
             }
             file.close();
         }else{

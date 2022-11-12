@@ -36,6 +36,7 @@ private slots:
     void on_actionRevert_flash_triggered();
     void on_actionUpdate_flash_triggered();
     void on_actionSignal_Test_HoldAction_triggered();
+    void on_actionSignal_Min_MaxAction_triggered();
     void on_actionDevice_Signal_Ignore_On_USBAction_triggered();
     void on_actionSave_Configuration_to_file_triggered();
     void on_actionLoad_configuration_triggered();
