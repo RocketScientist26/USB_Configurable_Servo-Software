@@ -58,6 +58,7 @@
      <property name="font">
       <font>
        <pointsize>8</pointsize>
+       <weight>75</weight>
        <italic>false</italic>
        <bold>true</bold>
       </font>
@@ -77,6 +78,7 @@
       <property name="font">
        <font>
         <pointsize>8</pointsize>
+        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -97,6 +99,7 @@
       <property name="font">
        <font>
         <pointsize>8</pointsize>
+        <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
        </font>
@@ -264,6 +267,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -281,6 +285,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -302,6 +307,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -320,6 +326,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -341,6 +348,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -349,7 +357,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QCheckBox" name="checkBox_Device_Ignore_Signal_On_USB">
+    <widget class="QCheckBox" name="checkBox_Signal_Ignore_On_USB">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -521,6 +529,7 @@
     </property>
     <property name="font">
      <font>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -541,6 +550,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -562,6 +572,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -589,6 +600,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -607,6 +619,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -625,6 +638,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -646,6 +660,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -664,6 +679,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -682,6 +698,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -700,6 +717,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -718,6 +736,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -742,6 +761,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -766,6 +786,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
@@ -944,6 +965,7 @@
      </property>
      <property name="font">
       <font>
+       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -961,6 +983,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -982,6 +1005,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1000,6 +1024,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1018,6 +1043,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1036,6 +1062,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1054,6 +1081,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1072,6 +1100,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1090,6 +1119,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1111,6 +1141,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1132,6 +1163,7 @@
       </property>
       <property name="font">
        <font>
+        <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
@@ -1146,7 +1178,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QCheckBox" name="checkBox_PID_Pon">
+    <widget class="QCheckBox" name="checkBox_PID_P_On_M">
      <property name="geometry">
       <rect>
        <x>490</x>
@@ -1566,7 +1598,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Current step: 0</string>
+      <string>Current step: 128</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_Potentiometer_Set_Start">
@@ -1603,15 +1635,15 @@
      <x>0</x>
      <y>0</y>
      <width>1041</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionLoad_configuration"/>
-    <addaction name="actionSave_Configuration_to_file"/>
+    <addaction name="actionLoadConfiguration"/>
+    <addaction name="actionSaveConfiguration"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -1626,14 +1658,14 @@
     <property name="title">
      <string>Flash</string>
     </property>
-    <addaction name="actionUpdate_flash"/>
-    <addaction name="actionRevert_flash"/>
+    <addaction name="actionStoreConfiguration"/>
+    <addaction name="actionRevertFromFlash"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFlash"/>
    <addaction name="menuAbout"/>
   </widget>
-  <action name="actionLoad_configuration">
+  <action name="actionLoadConfiguration">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1648,7 +1680,7 @@
     <string>Ctrl+O</string>
    </property>
   </action>
-  <action name="actionSave_Configuration_to_file">
+  <action name="actionSaveConfiguration">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1696,55 +1728,79 @@
     <string>About</string>
    </property>
   </action>
-  <action name="actionGraph_ZoomAction">
+  <action name="actionGraphZoom">
    <property name="text">
-    <string>Graph_ZoomAction</string>
+    <string>GraphZoom</string>
    </property>
    <property name="toolTip">
-    <string>Graph_ZoomAction</string>
+    <string>GraphZoom</string>
    </property>
   </action>
-  <action name="actionPotentiometer_Set_StartAction">
+  <action name="actionPotentiometerSetStart">
    <property name="text">
-    <string>Potentiometer_Set_StartAction</string>
+    <string>PotentiometerSetStart</string>
+   </property>
+   <property name="toolTip">
+    <string>PotentiometerSetStart</string>
    </property>
   </action>
-  <action name="actionPotentiometer_Set_EndAction">
+  <action name="actionPotentiometerSetEnd">
    <property name="text">
-    <string>Potentiometer_Set_EndAction</string>
+    <string>PotentiometerSetEnd</string>
+   </property>
+   <property name="toolTip">
+    <string>PotentiometerSetEnd</string>
    </property>
   </action>
-  <action name="actionPotentiometer_Start_margin_SpinboxAction">
+  <action name="actionPotentiometerStartMarginSpinbox">
    <property name="text">
-    <string>Potentiometer_Start_margin_SpinboxAction</string>
+    <string>PotentiometerStartMarginSpinbox</string>
+   </property>
+   <property name="toolTip">
+    <string>PotentiometerStartMarginSpinbox</string>
    </property>
   </action>
-  <action name="actionPotentiometer_End_margin_SpinboxAction">
+  <action name="actionPotentiometerEndMarginSpinbox">
    <property name="text">
-    <string>Potentiometer_End_margin_SpinboxAction</string>
+    <string>PotentiometerEndMarginSpinbox</string>
+   </property>
+   <property name="toolTip">
+    <string>PotentiometerEndMarginSpinbox</string>
    </property>
   </action>
-  <action name="actionMotor_Max_Power_ChangedAction">
+  <action name="actionMotorMaxPowerChanged">
    <property name="text">
-    <string>Motor_Max_Power_ChangedAction</string>
+    <string>MotorMaxPowerChanged</string>
+   </property>
+   <property name="toolTip">
+    <string>MotorMaxPowerChanged</string>
    </property>
   </action>
-  <action name="actionPID_Test_OscillateAction">
+  <action name="actionPIDTestOscillate">
    <property name="text">
-    <string>PID_Test_OscillateAction</string>
+    <string>PIDTestOscillate</string>
+   </property>
+   <property name="toolTip">
+    <string>PIDTestOscillate</string>
    </property>
   </action>
-  <action name="actionSignal_Test_HoldAction">
+  <action name="actionSignalTestHold">
    <property name="text">
-    <string>Signal_Test_HoldAction</string>
+    <string>SignalTestHold</string>
+   </property>
+   <property name="toolTip">
+    <string>SignalTestHold</string>
    </property>
   </action>
-  <action name="actionDevice_Signal_Ignore_On_USBAction">
+  <action name="actionSignalIgnoreOnUSB">
    <property name="text">
-    <string>Device_Signal_Ignore_On_USBAction</string>
+    <string>SignalIgnoreOnUSB</string>
+   </property>
+   <property name="toolTip">
+    <string>SignalIgnoreOnUSB</string>
    </property>
   </action>
-  <action name="actionUpdate_flash">
+  <action name="actionStoreConfiguration">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1759,7 +1815,7 @@
     <string>Ctrl+F</string>
    </property>
   </action>
-  <action name="actionRevert_flash">
+  <action name="actionRevertFromFlash">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1774,12 +1830,17 @@
     <string>Ctrl+R</string>
    </property>
   </action>
-  <action name="actionSignal_Min_MaxAction">
+  <action name="actionSignalMinMaxChanged">
    <property name="text">
-    <string>Signal_Min_MaxAction</string>
+    <string>SignalMinMaxChanged</string>
    </property>
    <property name="toolTip">
-    <string>Signal_Min_MaxAction</string>
+    <string>SignalMinMaxChanged</string>
+   </property>
+  </action>
+  <action name="actionactionGraphBufferClip">
+   <property name="text">
+    <string>actionGraphBufferClip</string>
    </property>
   </action>
  </widget>
@@ -1806,7 +1867,7 @@
   <tabstop>pushButton_Motor_Test_Backward</tabstop>
   <tabstop>pushButton_Motor_Test_Forward</tabstop>
   <tabstop>doubleSpinBox_Signal_Min</tabstop>
-  <tabstop>checkBox_Device_Ignore_Signal_On_USB</tabstop>
+  <tabstop>checkBox_Signal_Ignore_On_USB</tabstop>
   <tabstop>doubleSpinBox_Signal_Test_Position</tabstop>
   <tabstop>pushButton_Signal_Test_Hold</tabstop>
   <tabstop>radioButton_LED_Off</tabstop>
@@ -1825,7 +1886,7 @@
   <tabstop>spinBox_PID_Sampling_Hz</tabstop>
   <tabstop>doubleSpinBox_PID_Split_1</tabstop>
   <tabstop>doubleSpinBox_PID_Split_2</tabstop>
-  <tabstop>checkBox_PID_Pon</tabstop>
+  <tabstop>checkBox_PID_P_On_M</tabstop>
   <tabstop>doubleSpinBox_PID_Test_Pos_A</tabstop>
   <tabstop>doubleSpinBox_PID_Test_Pos_B</tabstop>
   <tabstop>spinBox_PID_Test_Time</tabstop>
@@ -1854,7 +1915,7 @@
   <connection>
    <sender>doubleSpinBox_Device_Vertical_Start</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionGraph_ZoomAction</receiver>
+   <receiver>actionGraphZoom</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1870,7 +1931,7 @@
   <connection>
    <sender>doubleSpinBox_Device_Vertical_End</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionGraph_ZoomAction</receiver>
+   <receiver>actionGraphZoom</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1886,7 +1947,7 @@
   <connection>
    <sender>doubleSpinBox_Device_Horizontal_Start</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionGraph_ZoomAction</receiver>
+   <receiver>actionGraphZoom</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1902,7 +1963,7 @@
   <connection>
    <sender>doubleSpinBox_Device_Horizontal_End</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionGraph_ZoomAction</receiver>
+   <receiver>actionGraphZoom</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1918,7 +1979,7 @@
   <connection>
    <sender>pushButton_Potentiometer_Set_Start</sender>
    <signal>clicked()</signal>
-   <receiver>actionPotentiometer_Set_StartAction</receiver>
+   <receiver>actionPotentiometerSetStart</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1934,7 +1995,7 @@
   <connection>
    <sender>pushButton_Potentiometer_Set_End</sender>
    <signal>clicked()</signal>
-   <receiver>actionPotentiometer_Set_EndAction</receiver>
+   <receiver>actionPotentiometerSetEnd</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1950,7 +2011,7 @@
   <connection>
    <sender>spinBox_Potentiometer_Start_Margin</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>actionPotentiometer_Start_margin_SpinboxAction</receiver>
+   <receiver>actionPotentiometerStartMarginSpinbox</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1966,7 +2027,7 @@
   <connection>
    <sender>spinBox_Potentiometer_End_Margin</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>actionPotentiometer_End_margin_SpinboxAction</receiver>
+   <receiver>actionPotentiometerEndMarginSpinbox</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1982,7 +2043,7 @@
   <connection>
    <sender>horizontalSlider_Motor_Max_Power</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>actionMotor_Max_Power_ChangedAction</receiver>
+   <receiver>actionMotorMaxPowerChanged</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1998,7 +2059,7 @@
   <connection>
    <sender>pushButton_PID_Test_Oscillate</sender>
    <signal>toggled(bool)</signal>
-   <receiver>actionPID_Test_OscillateAction</receiver>
+   <receiver>actionPIDTestOscillate</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2014,7 +2075,7 @@
   <connection>
    <sender>pushButton_Signal_Test_Hold</sender>
    <signal>toggled(bool)</signal>
-   <receiver>actionSignal_Test_HoldAction</receiver>
+   <receiver>actionSignalTestHold</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2028,9 +2089,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>checkBox_Device_Ignore_Signal_On_USB</sender>
+   <sender>checkBox_Signal_Ignore_On_USB</sender>
    <signal>stateChanged(int)</signal>
-   <receiver>actionDevice_Signal_Ignore_On_USBAction</receiver>
+   <receiver>actionSignalIgnoreOnUSB</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2046,7 +2107,7 @@
   <connection>
    <sender>doubleSpinBox_Signal_Min</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionSignal_Min_MaxAction</receiver>
+   <receiver>actionSignalMinMaxChanged</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -2062,12 +2123,28 @@
   <connection>
    <sender>doubleSpinBox_Signal_Max</sender>
    <signal>valueChanged(double)</signal>
-   <receiver>actionSignal_Min_MaxAction</receiver>
+   <receiver>actionSignalMinMaxChanged</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>775</x>
      <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_Device_Buffer_End</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>actionactionGraphBufferClip</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>380</x>
+     <y>511</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>

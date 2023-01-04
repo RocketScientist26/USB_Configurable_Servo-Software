@@ -1,9 +1,51 @@
+//! Class manages sending/receiving packets over USB Virtual COM Port
+/*!
+    Usb packet structure:
+
+    [TOTAL_LENGHT_INCLUDING_THIS_BYTE_AND_CRC 1][DATA ***][CRC 4]
+*/
+
 #ifndef USB_H
 #define USB_H
 
-#define USB_RX_TIMEOUT_MS 5000
-#define USB_STATUS_POLL_MS 20
-#define USB_VID 0x0483
-#define USB_PID 0x5740
+#include <QObject>
+#include <QTimer>
+#include <QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
+#include "crc32.h"
+
+class Usb : public QObject
+{
+    Q_OBJECT
+    public:
+        //Padding byte for 32bit CRC
+        #define USB_CRC_PADDING_SYMBOL (uint8_t)0
+
+        enum{
+            VID = 0x0483,           //Class automatically connects to the first detected device with these VID and PID
+            PID = 0x5740,           //Device PID
+            RX_TIMEOUT_MS = 2000    //If don't get any responce packet for this time, try reconnecting (taken large value to prevent unnecessaryly frequent reconnecting)
+        };
+
+        explicit Usb();
+        void run();
+        void send(QByteArray data);
+
+    signals:
+        void connected();
+        void disconnected();
+        void dataReady(QByteArray data, int packet_time_ms);
+
+    private:
+        QSerialPort *port = new QSerialPort(this);
+        QTimer *detect_timer = new QTimer(this);        //Timer for checking available ports list and connecting if applicable
+        QTimer *rx_timer = new QTimer(this);            //Timer for measuring packet responce time, also for reconnecting if timed out
+
+    private slots:
+        void disconnect();
+        void detectTimerOvf();
+        void dataReceived();
+        void portError(QSerialPort::SerialPortError error);
+};
 
 #endif // USB_H

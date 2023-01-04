@@ -2,68 +2,196 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSerialPort>
+#include <QTimer>
+#include <QDesktopServices>
+#include "file.h"
+#include "graph.h"
+#include "parser.h"
+#include "usb.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+    class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    public:
+        MainWindow(QWidget *parent = nullptr);
+        ~MainWindow();
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private slots:
-    //USB
-    void USB_Detect_Timer_Ovf();
-    void USB_RX_Timeout_Timer_Ovf();
-    void USB_Poll_Timer_Ovf();
-    void USB_Data_Received();
-    void USB_Error(QSerialPort::SerialPortError error);
-    //Graph
-    void on_actionGraph_ZoomAction_triggered();
-    //UI
-    void UI_PID_Test_Oscillate_Timer_Overflowed();
-    void on_actionPotentiometer_Set_StartAction_triggered();
-    void on_actionPotentiometer_Set_EndAction_triggered();
-    void on_actionPotentiometer_Start_margin_SpinboxAction_triggered();
-    void on_actionPotentiometer_End_margin_SpinboxAction_triggered();
-    void on_actionMotor_Max_Power_ChangedAction_triggered();
-    void on_actionPID_Test_OscillateAction_triggered();
-    void on_actionRevert_flash_triggered();
-    void on_actionUpdate_flash_triggered();
-    void on_actionSignal_Test_HoldAction_triggered();
-    void on_actionSignal_Min_MaxAction_triggered();
-    void on_actionDevice_Signal_Ignore_On_USBAction_triggered();
-    void on_actionSave_Configuration_to_file_triggered();
-    void on_actionLoad_configuration_triggered();
-    void on_actionAbout_triggered();
-    void on_actionManual_triggered();
+    private slots:
+        //USB
+        void usbConnected();
+        void usbDisconnected();
+        //Parser
+        void parserConfigReceived(Parser::parser_config_t config);
+        void parserStatusReceived(Parser::parser_rx_status_t rx_status, int packet_time_ms);
+        //PID Test oscillation timer
+        void pidTestOscTimOvf();
+        //UI Interrupts
+        void on_actionPotentiometerSetStart_triggered();
+        void on_actionPotentiometerSetEnd_triggered();
+        void on_actionPotentiometerStartMarginSpinbox_triggered();
+        void on_actionPotentiometerEndMarginSpinbox_triggered();
+        void on_actionMotorMaxPowerChanged_triggered();
+        void on_actionPIDTestOscillate_triggered();
+        void on_actionRevertFromFlash_triggered();
+        void on_actionStoreConfiguration_triggered();
+        void on_actionSignalTestHold_triggered();
+        void on_actionSignalMinMaxChanged_triggered();
+        void on_actionSignalIgnoreOnUSB_triggered();
+        void on_actionLoadConfiguration_triggered();
+        void on_actionSaveConfiguration_triggered();
+        void on_actionAbout_triggered();
+        void on_actionManual_triggered();
+        void on_actionGraphZoom_triggered();
+        void on_actionactionGraphBufferClip_triggered();
 
 private:
-    Ui::MainWindow *ui;
-    //CRC
-    uint32_t CRC32_Get(uint32_t *data, uint32_t length);
-    //USB
-    void USB_Init();
-    void USB_Connected();
-    void USB_Disconnected();
-    void USB_Send();
-    //Graph
-    void Graph_Init();
-    void Graph_Clear();
-    void Graph_Append(float setpos, float actpos, int16_t mpwr);
-    //Parser
-    void Parser_Request_Config(uint8_t revert_flash);
-    void Parser_Parse_Config();
-    void Parser_Request_Status();
-    void Parser_Parse_Status();
-    //UI
-    void UI_Init();
-    void UI_Clear();
-    void UI_Enble(bool enable);
+        //Minimum allowed difference between minimum and maximum signal length
+        #define SIGNAL_POSITION_MIN_LENGTH 0.4f
+        //Connection status texts
+        #define STATUS_CONNECTED "Connected!"
+        #define STATUS_DISCONNECTED "Disonnected!"
+
+        //UI States variable type
+        typedef struct{
+            bool group_pot;
+            bool group_motor;
+            bool group_signal;
+            bool group_led;
+            bool group_pid;
+            bool checkbox_signal_ignore;
+            bool button_pause_resume;
+            bool action_update_flash;
+            bool action_revert_flash;
+            bool action_load_configuration;
+            bool action_save_configuration;
+            bool button_signal_hold;
+            bool button_pid_test_oscillate;
+            bool button_motor_test_backward;
+            bool button_motor_test_forward;
+        }ui_enable_t;
+
+        //All UI states enum we use
+        enum{
+            UI_ENABLE_STATE_ALL_DISABLED,
+            UI_ENABLE_STATE_RUNNING,
+            UI_ENABLE_STATE_RUNNING_SIGNAL_IGNORE_DISABLED,
+            UI_ENABLE_STATE_RUNNING_SIGNAL_TEST_HOLD,
+            UI_ENABLE_STATE_RUNNING_PID_TEST_OSCILLATE,
+            UI_ENABLE_STATES_TOTAL //How many enum elements above we have in this enum
+        }UI_ENABLE_STATE;
+
+        //Array of UI state variables for all UI states in above enum
+        ui_enable_t ui_enable[UI_ENABLE_STATES_TOTAL] = {
+            {
+                //UI_ENABLE_STATE_ALL_DISABLED
+                .group_pot = false,
+                .group_motor = false,
+                .group_signal = false,
+                .group_led = false,
+                .group_pid = false,
+                .checkbox_signal_ignore = false,
+                .button_pause_resume = false,
+                .action_update_flash = false,
+                .action_revert_flash = false,
+                .action_load_configuration = false,
+                .action_save_configuration = false,
+                .button_signal_hold = false,
+                .button_pid_test_oscillate = false,
+                .button_motor_test_backward = false,
+                .button_motor_test_forward = false
+            },
+            {
+                //UI_ENABLE_STATE_RUNNING
+                .group_pot = true,
+                .group_motor = true,
+                .group_signal = true,
+                .group_led = true,
+                .group_pid = true,
+                .checkbox_signal_ignore = true,
+                .button_pause_resume = true,
+                .action_update_flash = true,
+                .action_revert_flash = true,
+                .action_load_configuration = true,
+                .action_save_configuration = true,
+                .button_signal_hold = true,
+                .button_pid_test_oscillate = true,
+                .button_motor_test_backward = true,
+                .button_motor_test_forward = true
+            },
+            {
+                //UI_ENABLE_STATE_RUNNING_SIGNAL_IGNORE_DISABLED
+                .group_pot = true,
+                .group_motor = true,
+                .group_signal = true,
+                .group_led = true,
+                .group_pid = true,
+                .checkbox_signal_ignore = true,
+                .button_pause_resume = true,
+                .action_update_flash = true,
+                .action_revert_flash = true,
+                .action_load_configuration = true,
+                .action_save_configuration = true,
+                .button_signal_hold = false,
+                .button_pid_test_oscillate = false,
+                .button_motor_test_backward = false,
+                .button_motor_test_forward = false
+            },
+            {
+                //UI_ENABLE_STATE_RUNNING_SIGNAL_TEST_HOLD
+                .group_pot = true,
+                .group_motor = true,
+                .group_signal = true,
+                .group_led = true,
+                .group_pid = true,
+                .checkbox_signal_ignore = false,
+                .button_pause_resume = true,
+                .action_update_flash = false,
+                .action_revert_flash = false,
+                .action_load_configuration = false,
+                .action_save_configuration = false,
+                .button_signal_hold = true,
+                .button_pid_test_oscillate = false,
+                .button_motor_test_backward = false,
+                .button_motor_test_forward = false
+            },
+            {
+                //UI_ENABLE_STATE_RUNNING_PID_TEST_OSCILLATE
+                .group_pot = true,
+                .group_motor = true,
+                .group_signal = true,
+                .group_led = true,
+                .group_pid = true,
+                .checkbox_signal_ignore = false,
+                .button_pause_resume = true,
+                .action_update_flash = false,
+                .action_revert_flash = false,
+                .action_load_configuration = false,
+                .action_save_configuration = false,
+                .button_signal_hold = false,
+                .button_pid_test_oscillate = true,
+                .button_motor_test_backward = false,
+                .button_motor_test_forward = false
+            }
+        };
+
+        //These objects take care for themselves, no need for anything except init
+        Ui::MainWindow *ui;
+        Usb *usb = new Usb();
+        Parser *parser = new Parser();
+
+        //We should update/clear these
+        Graph *graph;
+        QTimer *pid_test_osc_timer = new QTimer(this);;
+        int pid_test_oscillate_edge = 0;
+        uint8_t keep_revert_flash = Parser::CMD_SETTINGS_KEEP;
+
+        //UI enable function, should be run with one of the element of array above
+        void uiEnable(ui_enable_t *enable);
 };
 #endif // MAINWINDOW_H

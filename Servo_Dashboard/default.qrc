@@ -1,22 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>Resources/Latin Modern Mono/lmmono10-italic.otf</file>
         <file>Resources/Latin Modern Mono/lmmono10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonocaps10-oblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonocaps10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonolt10-bold.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonolt10-boldoblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonolt10-oblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonolt10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoltcond10-oblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoltcond10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoprop10-oblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoprop10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoproplt10-bold.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoproplt10-boldoblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoproplt10-oblique.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoproplt10-regular.otf</file>
-        <file>Resources/Latin Modern Mono/lmmonoslant10-regular.otf</file>
         <file>Resources/icon.svg</file>
         <file>Resources/icon_manual.svg</file>
         <file>Resources/icon_about.svg</file>
@@ -26,5 +10,6 @@
         <file>Resources/icon_save.svg</file>
         <file>Resources/icon_store.svg</file>
         <file>Resources/about.svg</file>
+        <file>Resources/icon_error.svg</file>
     </qresource>
 </RCC>
