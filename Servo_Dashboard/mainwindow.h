@@ -39,7 +39,7 @@ class MainWindow : public QMainWindow
         void on_actionMotorMaxPowerChanged_triggered();
         void on_actionPIDTestOscillate_triggered();
         void on_actionRevertFromFlash_triggered();
-        void on_actionStoreConfiguration_triggered();
+        void on_actionStoreToFlash_triggered();
         void on_actionSignalTestHold_triggered();
         void on_actionSignalMinMaxChanged_triggered();
         void on_actionSignalIgnoreOnUSB_triggered();
@@ -48,7 +48,7 @@ class MainWindow : public QMainWindow
         void on_actionAbout_triggered();
         void on_actionManual_triggered();
         void on_actionGraphZoom_triggered();
-        void on_actionactionGraphBufferClip_triggered();
+        void on_actionGraphBufferClip_triggered();
 
 private:
         //Minimum allowed difference between minimum and maximum signal length
@@ -84,7 +84,7 @@ private:
             UI_ENABLE_STATE_RUNNING_SIGNAL_TEST_HOLD,
             UI_ENABLE_STATE_RUNNING_PID_TEST_OSCILLATE,
             UI_ENABLE_STATES_TOTAL //How many enum elements above we have in this enum
-        }UI_ENABLE_STATE;
+        };
 
         //Array of UI state variables for all UI states in above enum
         ui_enable_t ui_enable[UI_ENABLE_STATES_TOTAL] = {
@@ -180,18 +180,18 @@ private:
             }
         };
 
-        //These objects take care for themselves, no need for anything except init
+        //These objects does not requre to be updated or cleared at connect/disconnect
         Ui::MainWindow *ui;
-        Usb *usb = new Usb();
-        Parser *parser = new Parser();
+        Usb usb;
+        Parser parser;
 
         //We should update/clear these
         Graph *graph;
-        QTimer *pid_test_osc_timer = new QTimer(this);;
-        int pid_test_oscillate_edge = 0;
+        QTimer pid_test_osc_timer;
+        uint8_t pid_test_oscillate_edge = 0;
         uint8_t keep_revert_flash = Parser::CMD_SETTINGS_KEEP;
 
-        //UI enable function, should be run with one of the element of array above
+        //UI enable function, should be run with one of the element of the array above
         void uiEnable(ui_enable_t *enable);
 };
 #endif // MAINWINDOW_H

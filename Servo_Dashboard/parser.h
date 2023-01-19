@@ -142,14 +142,14 @@ class Parser : public QObject
             uint8_t pid_sampling_ms;
         }__attribute__ ((__packed__)) parser_config_t;
 
-        //Status data sent to servo
+        //Status data to servo
         typedef struct{
             float pid_setpoint;
             bool usb_rq_stat_phold;
             uint8_t usb_rq_stat_motor;
         }__attribute__ ((__packed__)) parser_tx_status_t;
 
-        //Status data received from servo
+        //Status data from servo
         typedef struct{
             bool pid_running;
             float pid_setpoint;

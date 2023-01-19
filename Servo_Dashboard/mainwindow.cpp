@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     ui->setupUi(this);
 
     //PID Test oscillation timer
-    connect(pid_test_osc_timer, SIGNAL(timeout()), this, SLOT(pidTestOscTimOvf()));
-    pid_test_osc_timer->setTimerType(Qt::PreciseTimer);
+    connect(&pid_test_osc_timer, SIGNAL(timeout()), this, SLOT(pidTestOscTimOvf()));
+    pid_test_osc_timer.setTimerType(Qt::PreciseTimer);
 
     //Chart
     //Load "Latin Modern Mono" monospace font for chart legend
@@ -17,40 +17,41 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     //Chart itself
     graph = new Graph(ui->chart_Device);
     //Zoom and clip graph to match class variables to mainwindow.ui file configuration, whatever we set there
-    on_actionactionGraphBufferClip_triggered();
+    on_actionGraphBufferClip_triggered();
 
     //Parser
-    connect(usb, SIGNAL(dataReady(QByteArray,int)), parser, SLOT(parseData(QByteArray,int)));
-    connect(parser, SIGNAL(configReceived(Parser::parser_config_t)), this, SLOT(parserConfigReceived(Parser::parser_config_t)));
-    connect(parser, SIGNAL(statusReceived(Parser::parser_rx_status_t,int)), this, SLOT(parserStatusReceived(Parser::parser_rx_status_t,int)));
+    connect(&usb, SIGNAL(dataReady(QByteArray,int)), &parser, SLOT(parseData(QByteArray,int)));
+    connect(&parser, SIGNAL(configReceived(Parser::parser_config_t)), this, SLOT(parserConfigReceived(Parser::parser_config_t)));
+    connect(&parser, SIGNAL(statusReceived(Parser::parser_rx_status_t,int)), this, SLOT(parserStatusReceived(Parser::parser_rx_status_t,int)));
 
     //USB
-    connect(usb, SIGNAL(connected()), this, SLOT(usbConnected()));
-    connect(usb, SIGNAL(disconnected()), this, SLOT(usbDisconnected()));
-    usb->run();
+    connect(&usb, SIGNAL(connected()), this, SLOT(usbConnected()));
+    connect(&usb, SIGNAL(disconnected()), this, SLOT(usbDisconnected()));
+    usb.run();
 }
 //Destructor
 MainWindow::~MainWindow()
 {
+    delete graph;
     delete ui;
 }
 
 /*
-    Private functions and slots
+    Private slots and functions
 */
 
 //USB connected interrupt from "Usb" object
 void MainWindow::usbConnected()
 {
     graph->clear();
-    usb->send(parser->configRequest(Parser::CMD_SETTINGS_KEEP));
+    usb.send(parser.configRequest(Parser::CMD_SETTINGS_KEEP));
 
     ui->label_Device_Status->setText(STATUS_CONNECTED);
 }
 //USB disconnected interrupt
 void MainWindow::usbDisconnected()
 {
-    pid_test_osc_timer->stop();
+    pid_test_osc_timer.stop();
     pid_test_oscillate_edge = 0;
     keep_revert_flash = Parser::CMD_SETTINGS_KEEP;
 
@@ -59,6 +60,7 @@ void MainWindow::usbDisconnected()
     uiEnable(&ui_enable[UI_ENABLE_STATE_ALL_DISABLED]);
     ui->label_Device_Status->setText(STATUS_DISCONNECTED);
 }
+
 //Interrupt from parser if supplied data was identified as configuration data
 void MainWindow::parserConfigReceived(Parser::parser_config_t config)
 {
@@ -107,7 +109,7 @@ void MainWindow::parserConfigReceived(Parser::parser_config_t config)
         .usb_rq_stat_phold = false,
         .usb_rq_stat_motor = false
     };
-    usb->send(parser->statusRequest(&config, &tx_status));
+    usb.send(parser.statusRequest(&config, &tx_status));
 }
 //Interrupt from parser if supplied data was identified as status data
 void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int packet_time_ms)
@@ -124,7 +126,7 @@ void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int 
 
     //Revert/Store values in flash if requested so
     if(keep_revert_flash){
-        usb->send(parser->configRequest(keep_revert_flash));
+        usb.send(parser.configRequest(keep_revert_flash));
         keep_revert_flash = Parser::CMD_SETTINGS_KEEP;
         return;
     }
@@ -189,7 +191,7 @@ void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int 
     }
 
     //Request status again
-    usb->send(parser->statusRequest(&config, &tx_status));
+    usb.send(parser.statusRequest(&config, &tx_status));
 
     //Enable UI
     if(ui->pushButton_Signal_Test_Hold->isChecked()){
@@ -205,6 +207,13 @@ void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int 
         uiEnable(&ui_enable[UI_ENABLE_STATE_RUNNING]);
     }
 }
+
+//Timer interrupt for PID oscillation test
+void MainWindow::pidTestOscTimOvf()
+{
+    pid_test_oscillate_edge = 1 - pid_test_oscillate_edge;
+}
+
 //Enables disables UI elements according to provided "bool" array
 void MainWindow::uiEnable(ui_enable_t *enable)
 {
@@ -215,7 +224,7 @@ void MainWindow::uiEnable(ui_enable_t *enable)
     ui->groupBox_PID->setEnabled(enable->group_pid);
     ui->checkBox_Signal_Ignore_On_USB->setEnabled(enable->checkbox_signal_ignore);
     ui->pushButton_Device_Pause_Resume->setEnabled(enable->button_pause_resume);
-    ui->actionStoreConfiguration->setEnabled(enable->action_update_flash);
+    ui->actionStoreToFlash->setEnabled(enable->action_update_flash);
     ui->actionRevertFromFlash->setEnabled(enable->action_revert_flash);
     ui->actionLoadConfiguration->setEnabled(enable->action_load_configuration);
     ui->actionSaveConfiguration->setEnabled(enable->action_save_configuration);
@@ -223,11 +232,6 @@ void MainWindow::uiEnable(ui_enable_t *enable)
     ui->pushButton_PID_Test_Oscillate->setEnabled(enable->button_pid_test_oscillate);
     ui->pushButton_Motor_Test_Backward->setEnabled(enable->button_motor_test_backward);
     ui->pushButton_Motor_Test_Forward->setEnabled(enable->button_motor_test_forward);
-}
-//Timer interrupt for PID oscillation test
-void MainWindow::pidTestOscTimOvf()
-{
-    pid_test_oscillate_edge = 1 - pid_test_oscillate_edge;
 }
 
 /*
@@ -245,7 +249,7 @@ void MainWindow::on_actionGraphZoom_triggered()
     graph->zoom(ui->doubleSpinBox_Device_Vertical_Start->value(), ui->doubleSpinBox_Device_Vertical_End->value(), ui->doubleSpinBox_Device_Horizontal_Start->value(), ui->doubleSpinBox_Device_Horizontal_End->value());
 }
 //Graph buffer clip checkbox interrupt
-void MainWindow::on_actionactionGraphBufferClip_triggered()
+void MainWindow::on_actionGraphBufferClip_triggered()
 {
     on_actionGraphZoom_triggered();
     graph->clipBufferEnd(ui->checkBox_Device_Buffer_End->isChecked());
@@ -294,10 +298,10 @@ void MainWindow::on_actionMotorMaxPowerChanged_triggered()
 void MainWindow::on_actionPIDTestOscillate_triggered()
 {
     if(ui->pushButton_PID_Test_Oscillate->isChecked()){
-        pid_test_osc_timer->start(ui->spinBox_PID_Test_Time->value() * 1000);
+        pid_test_osc_timer.start(ui->spinBox_PID_Test_Time->value() * 1000);
         uiEnable(&ui_enable[UI_ENABLE_STATE_RUNNING_PID_TEST_OSCILLATE]);
     }else{
-        pid_test_osc_timer->stop();
+        pid_test_osc_timer.stop();
         pid_test_oscillate_edge = 0;
         uiEnable(&ui_enable[UI_ENABLE_STATE_RUNNING]);
     }
@@ -423,7 +427,7 @@ void MainWindow::on_actionRevertFromFlash_triggered(){
     keep_revert_flash = Parser::CMD_SETTINGS_REVERT;
 }
 //Flash menu - Store
-void MainWindow::on_actionStoreConfiguration_triggered(){
+void MainWindow::on_actionStoreToFlash_triggered(){
     uiEnable(&ui_enable[UI_ENABLE_STATE_ALL_DISABLED]);
     keep_revert_flash = Parser::CMD_SETTINGS_FLASH;
 }

@@ -6,13 +6,13 @@
 Usb::Usb()
 {
     //Timers
-    connect(detect_timer, SIGNAL(timeout()), this, SLOT(detectTimerOvf()));
-    connect(rx_timer, SIGNAL(timeout()), this, SLOT(disconnect()));
-    rx_timer->setTimerType(Qt::PreciseTimer);
+    connect(&detect_timer, SIGNAL(timeout()), this, SLOT(detectTimerOvf()));
+    connect(&rx_timer, SIGNAL(timeout()), this, SLOT(disconnect()));
+    rx_timer.setTimerType(Qt::PreciseTimer);
 
     //Port
-    connect(port,SIGNAL(readyRead()),this,SLOT(dataReceived()));
-    connect(port, SIGNAL(errorOccurred(QSerialPort::SerialPortError)), this, SLOT(portError(QSerialPort::SerialPortError)));
+    connect(&port,SIGNAL(readyRead()),this,SLOT(dataReceived()));
+    connect(&port, SIGNAL(errorOccurred(QSerialPort::SerialPortError)), this, SLOT(portError(QSerialPort::SerialPortError)));
 }
 
 /*!
@@ -20,7 +20,7 @@ Usb::Usb()
 */
 void Usb::run()
 {
-    detect_timer->start(1);
+    detect_timer.start(1);
 }
 
 /*!
@@ -28,9 +28,9 @@ void Usb::run()
 */
 void Usb::send(QByteArray data)
 {
-    if(port->isOpen()){
+    if(port.isOpen()){
         //Start timer for measuring total packet time
-        rx_timer->start(RX_TIMEOUT_MS);
+        rx_timer.start(RX_TIMEOUT_MS);
 
         //Make "data length + 1" even of "sizeof(uint32_t)" for 32 bit CRC
         while((data.length() + 1) % sizeof(uint32_t)){
@@ -47,7 +47,7 @@ void Usb::send(QByteArray data)
         data_tx.append(QByteArray((char *)&crc, sizeof(uint32_t)));         //Append CRC
 
         //Send
-        port->write(data_tx);
+        port.write(data_tx);
     }
 }
 
@@ -56,7 +56,7 @@ void Usb::send(QByteArray data)
 */
 void Usb::detectTimerOvf()
 {
-    if(!port->isOpen())
+    if(!port.isOpen())
     {
         QList<QSerialPortInfo> ports = QSerialPortInfo::availablePorts();
         int i = 0;
@@ -67,8 +67,8 @@ void Usb::detectTimerOvf()
             {
                 if((ports.at(i).vendorIdentifier() == VID) && (ports.at(i).productIdentifier() == PID))
                 {
-                    port->setPortName(ports.at(i).portName());
-                    if(port->open(QIODevice::ReadWrite))
+                    port.setPortName(ports.at(i).portName());
+                    if(port.open(QIODevice::ReadWrite))
                     {
                         emit connected();
                         return;
@@ -85,7 +85,7 @@ void Usb::detectTimerOvf()
 */
 void Usb::dataReceived()
 {
-    QByteArray data = port->readAll();
+    QByteArray data = port.readAll();
 
     //If there is any data available
     if(data.length())
@@ -96,8 +96,8 @@ void Usb::dataReceived()
             //If CRC is correct
             if(Crc32().get((uint32_t *)&data.data()[0], (data.length() / 4) - 1) == *(uint32_t *)&data.data()[data.length() - 4])
             {
-                int rx_time = RX_TIMEOUT_MS - rx_timer->remainingTime();
-                rx_timer->stop();
+                int rx_time = RX_TIMEOUT_MS - rx_timer.remainingTime();
+                rx_timer.stop();
                 emit dataReady(data, rx_time);
                 return;
             }
@@ -131,8 +131,8 @@ void Usb::portError(QSerialPort::SerialPortError error)
 */
 void Usb::disconnect()
 {
-    if(port->isOpen()) port->close();
-    rx_timer->stop();
+    if(port.isOpen()) port.close();
+    rx_timer.stop();
 
     emit disconnected();
 }

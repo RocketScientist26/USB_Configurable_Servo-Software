@@ -37,9 +37,9 @@ class Usb : public QObject
         void dataReady(QByteArray data, int packet_time_ms);
 
     private:
-        QSerialPort *port = new QSerialPort(this);
-        QTimer *detect_timer = new QTimer(this);        //Timer for checking available ports list and connecting if applicable
-        QTimer *rx_timer = new QTimer(this);            //Timer for measuring packet responce time, also for reconnecting if timed out
+        QSerialPort port;
+        QTimer detect_timer;        //Timer for checking available ports list and connecting if applicable
+        QTimer rx_timer;            //Timer for measuring packet responce time, also for reconnecting if timed out
 
     private slots:
         void disconnect();

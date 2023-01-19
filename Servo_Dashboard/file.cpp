@@ -18,7 +18,7 @@ bool File::get(file_data_t *values)
     //Open file for reading
     if(!file.open(QIODevice::ReadOnly | QIODevice::Unbuffered))
     {
-        showMessage(new QString(MESSAGE_ERROR_TEXT_OPEN));
+        showMessage(MESSAGE_ERROR_TEXT_OPEN);
         return false;
     }
 
@@ -34,7 +34,7 @@ bool File::get(file_data_t *values)
     //Check if actual data size equals correct data size
     if(file_data.length() != file_data_size){
         file.close();
-        showMessage(new QString(MESSAGE_ERROR_TEXT_OPEN_WRONG_SIZE));
+        showMessage(MESSAGE_ERROR_TEXT_OPEN_WRONG_SIZE);
         return false;
     }
 
@@ -44,7 +44,7 @@ bool File::get(file_data_t *values)
     if(file_provided_crc != file_data_actual_crc)
     {
         file.close();
-        showMessage(new QString(MESSAGE_ERROR_TEXT_OPEN_WRONG_CRC));
+        showMessage(MESSAGE_ERROR_TEXT_OPEN_WRONG_CRC);
         return false;
     }
 
@@ -74,7 +74,7 @@ bool File::save(file_data_t *values)
     //Open file for writing
     if(!file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Unbuffered))
     {
-        showMessage(new QString(MESSAGE_ERROR_TEXT_OPEN));
+        showMessage(MESSAGE_ERROR_TEXT_OPEN);
         return false;
     }
 
@@ -95,7 +95,7 @@ bool File::save(file_data_t *values)
     //Write data to file
     if(file.write(file_data) != file_data.length())
     {
-        showMessage(new QString(MESSAGE_ERROR_TEXT_SAVE));
+        showMessage(MESSAGE_ERROR_TEXT_SAVE);
         return false;
     }
 
@@ -106,11 +106,11 @@ bool File::save(file_data_t *values)
 /*!
     Private function for displaying error messages
 */
-void File::showMessage(QString *message)
+void File::showMessage(QString message)
 {
     QMessageBox message_box(qApp->activeWindow());
     message_box.setWindowIcon(QIcon(":/Resources/icon_error.svg"));
     message_box.setWindowTitle(MESSAGE_ERROR_TITLE);
-    message_box.setText(*message);
+    message_box.setText(message);
     message_box.exec();
 }

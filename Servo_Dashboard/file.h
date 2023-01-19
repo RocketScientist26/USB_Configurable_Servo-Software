@@ -56,7 +56,7 @@ class File : public QObject
         bool save(file_data_t *values);
 
     private:
-        void showMessage(QString *message);
+        void showMessage(QString message);
 };
 
 #endif // FILE_H

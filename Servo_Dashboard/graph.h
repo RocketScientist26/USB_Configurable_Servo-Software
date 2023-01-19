@@ -10,7 +10,7 @@ class Graph : public QObject
 {
     Q_OBJECT
     public:
-        explicit Graph(QChartView *chart = new QChartView());
+        explicit Graph(QChartView *chart = nullptr);
 
         void clear();
         void append(qreal setpos, qreal actpos, qreal mpwr, float xsec);

@@ -1658,7 +1658,7 @@
     <property name="title">
      <string>Flash</string>
     </property>
-    <addaction name="actionStoreConfiguration"/>
+    <addaction name="actionStoreToFlash"/>
     <addaction name="actionRevertFromFlash"/>
    </widget>
    <addaction name="menuFile"/>
@@ -1800,7 +1800,7 @@
     <string>SignalIgnoreOnUSB</string>
    </property>
   </action>
-  <action name="actionStoreConfiguration">
+  <action name="actionStoreToFlash">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1810,6 +1810,9 @@
    </property>
    <property name="text">
     <string>Store configuration</string>
+   </property>
+   <property name="toolTip">
+    <string>StoreToFlash</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+F</string>
@@ -1838,9 +1841,12 @@
     <string>SignalMinMaxChanged</string>
    </property>
   </action>
-  <action name="actionactionGraphBufferClip">
+  <action name="actionGraphBufferClip">
    <property name="text">
-    <string>actionGraphBufferClip</string>
+    <string>GraphBufferClip</string>
+   </property>
+   <property name="toolTip">
+    <string>GraphBufferClip</string>
    </property>
   </action>
  </widget>
@@ -2139,7 +2145,7 @@
   <connection>
    <sender>checkBox_Device_Buffer_End</sender>
    <signal>stateChanged(int)</signal>
-   <receiver>actionactionGraphBufferClip</receiver>
+   <receiver>actionGraphBufferClip</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
