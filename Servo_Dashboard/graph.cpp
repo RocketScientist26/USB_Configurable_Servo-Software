@@ -55,6 +55,19 @@ Graph::Graph(QChartView *chart)
 }
 
 /*!
+    Destructor, we should free memory of used objects
+*/
+Graph::~Graph()
+{
+    delete set_position_series;
+    delete actual_position_series;
+    delete motor_power_series;
+    delete axisX;
+    delete axisY;
+    delete axisZ;
+}
+
+/*!
     Clears graph and sets X axis counter to zero
 */
 void Graph::clear()

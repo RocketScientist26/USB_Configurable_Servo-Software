@@ -20,7 +20,7 @@ Usb::Usb()
 */
 void Usb::run()
 {
-    detect_timer.start(1);
+    detect_timer.start(100);
 }
 
 /*!

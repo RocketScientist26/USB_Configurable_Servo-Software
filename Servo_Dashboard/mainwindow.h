@@ -50,7 +50,7 @@ class MainWindow : public QMainWindow
         void on_actionGraphZoom_triggered();
         void on_actionGraphBufferClip_triggered();
 
-private:
+    private:
         //Minimum allowed difference between minimum and maximum signal length
         #define SIGNAL_POSITION_MIN_LENGTH 0.4f
         //Connection status texts
