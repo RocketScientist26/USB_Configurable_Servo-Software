@@ -58,7 +58,7 @@ void MainWindow::usbDisconnected()
     ui->pushButton_Signal_Test_Hold->setChecked(false);
     ui->pushButton_PID_Test_Oscillate->setChecked(false);
     uiEnable(&ui_enable[UI_ENABLE_STATE_ALL_DISABLED]);
-    ui->label_Device_Status->setText("Disonnected!");
+    ui->label_Device_Status->setText("Disconnected!");
 }
 
 //Interrupt from parser if supplied data was identified as configuration data
@@ -445,9 +445,4 @@ void MainWindow::on_actionAbout_triggered()
                      "\n"
                      "www.rocket-scientist.me");
     aboutbox.exec();
-}
-//Help menu - Open PDF Manual
-void MainWindow::on_actionManual_triggered()
-{
-    QDesktopServices::openUrl(QUrl::fromLocalFile("Manual.pdf"));
 }

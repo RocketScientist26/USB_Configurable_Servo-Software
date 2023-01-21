@@ -46,7 +46,6 @@ class MainWindow : public QMainWindow
         void on_actionLoadConfiguration_triggered();
         void on_actionSaveConfiguration_triggered();
         void on_actionAbout_triggered();
-        void on_actionManual_triggered();
         void on_actionGraphZoom_triggered();
         void on_actionGraphBufferClip_triggered();
 
