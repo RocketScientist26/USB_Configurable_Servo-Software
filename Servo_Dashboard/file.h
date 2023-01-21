@@ -16,15 +16,15 @@ class File : public QObject
     Q_OBJECT
     public:
         //Padding symbol to make 32 bit CRC work correctly
-        #define FILE_CRC_PADDING_SYMBOL             uint8_t(0)
+        const uint8_t FILE_CRC_PADDING_SYMBOL = 0;
 
         //Error message box title
-        #define MESSAGE_ERROR_TITLE                 "Error"
+        const QString MESSAGE_ERROR_TITLE =                 QString("Error");
         //File error texts
-        #define MESSAGE_ERROR_TEXT_OPEN             "Error opening configuration file!"
-        #define MESSAGE_ERROR_TEXT_OPEN_WRONG_CRC   "Error reading configuration file!\n" "Wrong CRC!"
-        #define MESSAGE_ERROR_TEXT_OPEN_WRONG_SIZE  "Error reading configuration file!\n" "Wrong data size!"
-        #define MESSAGE_ERROR_TEXT_SAVE             "Error writing configuration file!"
+        const QString MESSAGE_ERROR_TEXT_OPEN =             QString("Error opening configuration file!");
+        const QString MESSAGE_ERROR_TEXT_OPEN_WRONG_CRC =   QString("Error reading configuration file!\n" "Wrong CRC!");
+        const QString MESSAGE_ERROR_TEXT_OPEN_WRONG_SIZE =  QString("Error reading configuration file!\n" "Wrong data size!");
+        const QString MESSAGE_ERROR_TEXT_SAVE =             QString("Error writing configuration file!");
 
         //File data
         typedef struct{

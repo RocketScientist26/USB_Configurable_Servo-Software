@@ -11,14 +11,14 @@ class Graph : public QObject
     Q_OBJECT
     public:
         //Axis X maximum
-        #define X_AXIS_MAX_SEC 60.0f
+        const qreal X_AXIS_MAX_SEC = 60.0;
 
         explicit Graph(QChartView *chart = nullptr);
         ~Graph();
 
         void clear();
-        void append(qreal setpos, qreal actpos, qreal mpwr, float xsec);
-        void zoom(float v_min, float v_max, float h_min, float h_max);
+        void append(qreal setpos, qreal actpos, qreal mpwr, qreal xsec);
+        void zoom(qreal v_min, qreal v_max, qreal h_min, qreal h_max);
         void clipBufferEnd(bool clip);
 
     private:
@@ -30,9 +30,9 @@ class Graph : public QObject
         QValueAxis *axisZ = new QValueAxis;
 
         //Axis X maximum currently zoomed
-        float cx_max_sec = X_AXIS_MAX_SEC;
+        qreal cx_max_sec = X_AXIS_MAX_SEC;
         //Current X axis value
-        float cx_sec = 0;
+        qreal cx_sec = 0;
         //Clip buffer to currently zoomed X axis maximum or not
         bool clipbuff = false;
 };

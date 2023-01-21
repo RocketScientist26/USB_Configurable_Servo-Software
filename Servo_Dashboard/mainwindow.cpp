@@ -46,7 +46,7 @@ void MainWindow::usbConnected()
     graph->clear();
     usb.send(parser.configRequest(Parser::CMD_SETTINGS_KEEP));
 
-    ui->label_Device_Status->setText(STATUS_CONNECTED);
+    ui->label_Device_Status->setText("Connected!");
 }
 //USB disconnected interrupt
 void MainWindow::usbDisconnected()
@@ -58,7 +58,7 @@ void MainWindow::usbDisconnected()
     ui->pushButton_Signal_Test_Hold->setChecked(false);
     ui->pushButton_PID_Test_Oscillate->setChecked(false);
     uiEnable(&ui_enable[UI_ENABLE_STATE_ALL_DISABLED]);
-    ui->label_Device_Status->setText(STATUS_DISCONNECTED);
+    ui->label_Device_Status->setText("Disonnected!");
 }
 
 //Interrupt from parser if supplied data was identified as configuration data
@@ -117,7 +117,7 @@ void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int 
     qreal set_position_percent = (qreal)((rx_status.pid_setpoint - ui->spinBox_Potentiometer_Start_Margin->value())/((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f));
     qreal act_position_percent = (qreal)((rx_status.potentiometer_position - ui->spinBox_Potentiometer_Start_Margin->value())/((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f));
     qreal motor_power_percent = (qreal)((float)rx_status.motor_power/10.0f);
-    graph->append(set_position_percent, act_position_percent, motor_power_percent, (float)packet_time_ms / 1000.0f);
+    graph->append(set_position_percent, act_position_percent, motor_power_percent, (qreal)packet_time_ms / (qreal)1000.0);
 
     ui->checkBox_PID_Running->setChecked(rx_status.pid_running);
     ui->dial_Potentiometer->setValue((uint16_t )rx_status.potentiometer_position);
@@ -246,7 +246,7 @@ void MainWindow::on_actionGraphZoom_triggered()
     ui->doubleSpinBox_Device_Vertical_End->setMinimum(ui->doubleSpinBox_Device_Vertical_Start->value() + 1.0f);
     ui->doubleSpinBox_Device_Horizontal_End->setMinimum(ui->doubleSpinBox_Device_Horizontal_Start->value() + 1.0f);
 
-    graph->zoom(ui->doubleSpinBox_Device_Vertical_Start->value(), ui->doubleSpinBox_Device_Vertical_End->value(), ui->doubleSpinBox_Device_Horizontal_Start->value(), ui->doubleSpinBox_Device_Horizontal_End->value());
+    graph->zoom((qreal)ui->doubleSpinBox_Device_Vertical_Start->value(), (qreal)ui->doubleSpinBox_Device_Vertical_End->value(), (qreal)ui->doubleSpinBox_Device_Horizontal_Start->value(), (qreal)ui->doubleSpinBox_Device_Horizontal_End->value());
 }
 //Graph buffer clip checkbox interrupt
 void MainWindow::on_actionGraphBufferClip_triggered()

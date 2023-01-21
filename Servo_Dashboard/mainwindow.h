@@ -52,10 +52,7 @@ class MainWindow : public QMainWindow
 
     private:
         //Minimum allowed difference between minimum and maximum signal length
-        #define SIGNAL_POSITION_MIN_LENGTH 0.4f
-        //Connection status texts
-        #define STATUS_CONNECTED "Connected!"
-        #define STATUS_DISCONNECTED "Disonnected!"
+        const double SIGNAL_POSITION_MIN_LENGTH  = 0.4;
 
         //UI States variable type
         typedef struct{
@@ -83,7 +80,7 @@ class MainWindow : public QMainWindow
             UI_ENABLE_STATE_RUNNING_SIGNAL_IGNORE_DISABLED,
             UI_ENABLE_STATE_RUNNING_SIGNAL_TEST_HOLD,
             UI_ENABLE_STATE_RUNNING_PID_TEST_OSCILLATE,
-            UI_ENABLE_STATES_TOTAL //How many enum elements above we have in this enum
+            UI_ENABLE_STATES_TOTAL //How many elements we have in this enum
         };
 
         //Array of UI state variables for all UI states in above enum

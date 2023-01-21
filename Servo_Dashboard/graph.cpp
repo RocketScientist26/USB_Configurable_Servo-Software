@@ -12,7 +12,7 @@ Graph::Graph(QChartView *chart)
     chart->setRenderHint(QPainter::Antialiasing);
 
     //axes ranges and texts
-    axisX->setRange(0, (qreal)X_AXIS_MAX_SEC);
+    axisX->setRange(0, X_AXIS_MAX_SEC);
     axisX->setLabelFormat("%d");
     axisX->setTitleText("Time - Sec.");
 
@@ -81,21 +81,21 @@ void Graph::clear()
 /*!
     Appends values to chart, at "current position + xsec" position. Where "xsec" is time in seconds
 */
-void Graph::append(qreal setpos, qreal actpos, qreal mpwr, float xsec)
+void Graph::append(qreal setpos, qreal actpos, qreal mpwr, qreal xsec)
 {
     //Clear graph if buffer reached max limit or clipped end limit
     if(
         //If any of values got X >= X_AXIS_MAX_SEC seconds
-        ((float)set_position_series->at(set_position_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
-        ((float)actual_position_series->at(actual_position_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
-        ((float)motor_power_series->at(motor_power_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
+        (set_position_series->at(set_position_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
+        (actual_position_series->at(actual_position_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
+        (motor_power_series->at(motor_power_series->count() - 1).x() >= X_AXIS_MAX_SEC) ||
         (
             //Or if clipping buffer is enabled and any of values reached horizontal X axis value currently zoomed to
             clipbuff &&
             (
-                ((float)set_position_series->at(set_position_series->count() - 1).x() >= cx_max_sec) ||
-                ((float)actual_position_series->at(actual_position_series->count() - 1).x() >= cx_max_sec) ||
-                ((float)motor_power_series->at(motor_power_series->count() - 1).x() >= cx_max_sec)
+                (set_position_series->at(set_position_series->count() - 1).x() >= cx_max_sec) ||
+                (actual_position_series->at(actual_position_series->count() - 1).x() >= cx_max_sec) ||
+                (motor_power_series->at(motor_power_series->count() - 1).x() >= cx_max_sec)
             )
         )
     )
@@ -125,9 +125,9 @@ void Graph::append(qreal setpos, qreal actpos, qreal mpwr, float xsec)
     }
 
     //Append data to graph
-    set_position_series->append((qreal)cx_sec, setpos);
-    actual_position_series->append((qreal)cx_sec, actpos);
-    motor_power_series->append((qreal)cx_sec, mpwr);
+    set_position_series->append(cx_sec, setpos);
+    actual_position_series->append(cx_sec, actpos);
+    motor_power_series->append(cx_sec, mpwr);
 
     /*
         Update graph labels with fixed character count
@@ -185,7 +185,7 @@ void Graph::clipBufferEnd(bool clip)
 /*!
     Zooms graph
 */
-void Graph::zoom(float v_min, float v_max, float h_min, float h_max)
+void Graph::zoom(qreal v_min, qreal v_max, qreal h_min, qreal h_max)
 {
     //Store currently zoomed X axis maximum for buffer clipping
     cx_max_sec = h_max;
