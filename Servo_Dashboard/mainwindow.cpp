@@ -114,12 +114,16 @@ void MainWindow::parserConfigReceived(Parser::parser_config_t config)
 //Interrupt from parser if supplied data was identified as status data
 void MainWindow::parserStatusReceived(Parser::parser_rx_status_t rx_status, int packet_time_ms)
 {
-    qreal set_position_percent = (qreal)((rx_status.pid_setpoint - ui->spinBox_Potentiometer_Start_Margin->value())/((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f));
-    qreal act_position_percent = (qreal)((rx_status.potentiometer_position - ui->spinBox_Potentiometer_Start_Margin->value())/((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value())/100.0f));
-    qreal motor_power_percent = (qreal)((float)rx_status.motor_power/10.0f);
-    graph->append(set_position_percent, act_position_percent, motor_power_percent, (qreal)packet_time_ms / (qreal)1000.0);
-
+    //Append data to graph
+    qreal set_position_percent = (rx_status.pid_setpoint - ui->spinBox_Potentiometer_Start_Margin->value()) / ((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value()) / 100.0f);
+    qreal act_position_percent = (rx_status.potentiometer_position - ui->spinBox_Potentiometer_Start_Margin->value()) / ((ui->spinBox_Potentiometer_End_Margin->value() - ui->spinBox_Potentiometer_Start_Margin->value()) / 100.0f);
+    qreal motor_power_percent = (float)rx_status.motor_power / 10.0f;
+    if(!ui->pushButton_Device_Pause_Resume->isChecked()){
+        graph->append(set_position_percent, act_position_percent, motor_power_percent, (qreal)packet_time_ms / (qreal)1000.0);
+    }
+    //Show PID is running or not
     ui->checkBox_PID_Running->setChecked(rx_status.pid_running);
+    //Display potentiometer position
     ui->dial_Potentiometer->setValue((uint16_t )rx_status.potentiometer_position);
     //Update text on potentiometer value label
     ui->label_Potentiometer_Current_Step->setText(QString("Current step: ").append(QString::number((uint16_t)rx_status.potentiometer_position)));
