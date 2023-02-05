@@ -9,7 +9,7 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QIcon>
-#include "crc32.h"
+#include "Drivers/crc32.h"
 
 class File : public QObject
 {

@@ -12,7 +12,7 @@
 #include <QTimer>
 #include <QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
-#include "crc32.h"
+#include "Drivers/crc32.h"
 
 class Usb : public QObject
 {

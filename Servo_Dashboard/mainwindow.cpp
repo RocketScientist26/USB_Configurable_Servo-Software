@@ -442,11 +442,11 @@ void MainWindow::on_actionAbout_triggered()
     QMessageBox aboutbox(this);
     aboutbox.setIconPixmap(QPixmap(":/Resources/about.svg"));
     aboutbox.setWindowTitle("About");
-    aboutbox.setText("Servo Dashboard\n"
-                     "\n"
+    aboutbox.setText("Servo Dashboard - " + VERSION +
+                     "\n\n"
                      "This software is a part of the\n"
                      "open source servo motor project.\n"
                      "\n"
-                     "www.rocket-scientist.me");
+                     "https://rocket-scientist.me");
     aboutbox.exec();
 }

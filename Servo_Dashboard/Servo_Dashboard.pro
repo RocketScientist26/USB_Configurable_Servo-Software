@@ -9,19 +9,19 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    crc32.cpp \
-    file.cpp \
-    graph.cpp \
-    parser.cpp \
-    usb.cpp
+    System/file.cpp \
+    System/graph.cpp \
+    System/parser.cpp \
+    System/usb.cpp \
+    System/Drivers/crc32.cpp
 
 HEADERS += \
     mainwindow.h \
-    crc32.h \
-    file.h \
-    graph.h \
-    parser.h \
-    usb.h
+    System/file.h \
+    System/graph.h \
+    System/parser.h \
+    System/usb.h \
+    System/Drivers/crc32.h
 
 FORMS += \
     mainwindow.ui

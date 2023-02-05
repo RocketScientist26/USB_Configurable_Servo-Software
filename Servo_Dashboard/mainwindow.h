@@ -4,10 +4,10 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QDesktopServices>
-#include "file.h"
-#include "graph.h"
-#include "parser.h"
-#include "usb.h"
+#include "System/file.h"
+#include "System/graph.h"
+#include "System/parser.h"
+#include "System/usb.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -52,6 +52,8 @@ class MainWindow : public QMainWindow
     private:
         //Minimum allowed difference between minimum and maximum signal length
         const double SIGNAL_POSITION_MIN_LENGTH  = 0.4;
+        //App version
+        const QString VERSION = QString("v1.0");
 
         //UI States variable type
         typedef struct{
