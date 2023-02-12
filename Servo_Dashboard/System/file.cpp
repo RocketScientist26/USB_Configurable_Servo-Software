@@ -106,7 +106,7 @@ bool File::save(file_data_t *values)
 /*!
     Private function for displaying error messages
 */
-void File::showMessage(QString message)
+void File::showMessage(const QString &message)
 {
     QMessageBox message_box(qApp->activeWindow());
     message_box.setWindowIcon(QIcon(":/Resources/icon_error.svg"));

@@ -19,7 +19,7 @@ class Usb : public QObject
     Q_OBJECT
     public:
         //Padding byte for 32bit CRC
-        uint8_t USB_CRC_PADDING_SYMBOL = 0;
+        const uint8_t USB_CRC_PADDING_SYMBOL = 0;
 
         enum{
             VID = 0x0483,           //Class automatically connects to the first detected device with these VID and PID
