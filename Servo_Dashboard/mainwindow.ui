@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1041</width>
-    <height>691</height>
+    <width>1251</width>
+    <height>772</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,9 +24,9 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>150</y>
-      <width>341</width>
+      <x>770</x>
+      <y>160</y>
+      <width>461</width>
       <height>151</height>
      </rect>
     </property>
@@ -38,7 +38,7 @@
       <rect>
        <x>20</x>
        <y>100</y>
-       <width>101</width>
+       <width>151</width>
        <height>22</height>
       </rect>
      </property>
@@ -49,9 +49,9 @@
     <widget class="QGroupBox" name="groupBox_Motor_Test">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>80</y>
-       <width>191</width>
+       <x>200</x>
+       <y>70</y>
+       <width>241</width>
        <height>61</height>
       </rect>
      </property>
@@ -68,10 +68,10 @@
      <widget class="QPushButton" name="pushButton_Motor_Test_Forward">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>20</y>
-        <width>71</width>
-        <height>31</height>
+        <x>130</x>
+        <y>30</y>
+        <width>91</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -89,9 +89,9 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
-        <width>71</width>
-        <height>31</height>
+        <y>30</y>
+        <width>91</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="font">
@@ -109,9 +109,9 @@
     <widget class="QLabel" name="label_Motor_Max_Power_Val">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>20</y>
-       <width>41</width>
+       <x>330</x>
+       <y>30</y>
+       <width>111</width>
        <height>22</height>
       </rect>
      </property>
@@ -126,8 +126,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
-       <width>121</width>
+       <y>30</y>
+       <width>191</width>
        <height>22</height>
       </rect>
      </property>
@@ -140,7 +140,7 @@
       <rect>
        <x>20</x>
        <y>50</y>
-       <width>301</width>
+       <width>421</width>
        <height>22</height>
       </rect>
      </property>
@@ -167,10 +167,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>310</y>
-      <width>341</width>
-      <height>141</height>
+      <x>770</x>
+      <y>320</y>
+      <width>461</width>
+      <height>171</height>
      </rect>
     </property>
     <property name="title">
@@ -180,21 +180,24 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
-       <width>31</width>
+       <y>40</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>Min:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="label_Signal_Min_Ms">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>30</y>
-       <width>21</width>
+       <x>180</x>
+       <y>40</y>
+       <width>41</width>
        <height>22</height>
       </rect>
      </property>
@@ -205,9 +208,9 @@
     <widget class="QLabel" name="label_Signal_Timeout_Ms">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>180</x>
        <y>100</y>
-       <width>16</width>
+       <width>41</width>
        <height>22</height>
       </rect>
      </property>
@@ -220,20 +223,23 @@
       <rect>
        <x>20</x>
        <y>100</y>
-       <width>48</width>
+       <width>81</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>Timeout:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Min">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>30</y>
-       <width>51</width>
+       <x>100</x>
+       <y>40</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
@@ -256,10 +262,10 @@
     <widget class="QGroupBox" name="groupBox_Signal_Test">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>10</y>
-       <width>151</width>
-       <height>81</height>
+       <x>220</x>
+       <y>30</y>
+       <width>221</width>
+       <height>121</height>
       </rect>
      </property>
      <property name="font">
@@ -273,9 +279,9 @@
      <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Test_Position">
       <property name="geometry">
        <rect>
-        <x>66</x>
-        <y>20</y>
-        <width>51</width>
+        <x>100</x>
+        <y>30</y>
+        <width>71</width>
         <height>22</height>
        </rect>
       </property>
@@ -295,8 +301,8 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
-        <width>41</width>
+        <y>30</y>
+        <width>71</width>
         <height>22</height>
        </rect>
       </property>
@@ -308,14 +314,17 @@
       <property name="text">
        <string>Position:</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_Signal_Test_Hold">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>50</y>
-        <width>111</width>
-        <height>22</height>
+        <y>60</y>
+        <width>181</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -333,9 +342,9 @@
      <widget class="QLabel" name="label_Signal_Test_Position_Pct">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>20</y>
-        <width>16</width>
+        <x>180</x>
+        <y>30</y>
+        <width>21</width>
         <height>22</height>
        </rect>
       </property>
@@ -355,9 +364,9 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>100</y>
-       <width>151</width>
+       <x>20</x>
+       <y>130</y>
+       <width>181</width>
        <height>22</height>
       </rect>
      </property>
@@ -371,9 +380,9 @@
     <widget class="QSpinBox" name="spinBox_Signal_Timeout">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>110</x>
        <y>100</y>
-       <width>51</width>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -390,9 +399,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Signal_Max">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>60</y>
-       <width>51</width>
+       <x>100</x>
+       <y>70</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
@@ -415,9 +424,9 @@
     <widget class="QLabel" name="label_Signal_Max_Ms">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>60</y>
-       <width>21</width>
+       <x>180</x>
+       <y>70</y>
+       <width>41</width>
        <height>22</height>
       </rect>
      </property>
@@ -429,13 +438,16 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
-       <width>31</width>
+       <y>70</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>Max:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
     </widget>
    </widget>
@@ -445,10 +457,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>460</y>
-      <width>341</width>
-      <height>61</height>
+      <x>770</x>
+      <y>500</y>
+      <width>461</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="title">
@@ -458,8 +470,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
-       <width>41</width>
+       <y>40</y>
+       <width>61</width>
        <height>20</height>
       </rect>
      </property>
@@ -470,9 +482,9 @@
     <widget class="QRadioButton" name="radioButton_LED_Power">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>20</y>
-       <width>51</width>
+       <x>100</x>
+       <y>40</y>
+       <width>81</width>
        <height>20</height>
       </rect>
      </property>
@@ -483,9 +495,9 @@
     <widget class="QRadioButton" name="radioButton_LED_Signal">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>20</y>
-       <width>51</width>
+       <x>200</x>
+       <y>40</y>
+       <width>81</width>
        <height>20</height>
       </rect>
      </property>
@@ -499,9 +511,9 @@
     <widget class="QRadioButton" name="radioButton_LED_Position_Change">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>20</y>
-       <width>101</width>
+       <x>300</x>
+       <y>40</y>
+       <width>141</width>
        <height>20</height>
       </rect>
      </property>
@@ -515,8 +527,8 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>641</width>
-      <height>511</height>
+      <width>721</width>
+      <height>571</height>
      </rect>
     </property>
     <property name="font">
@@ -533,8 +545,8 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>540</x>
-       <y>441</y>
+       <x>620</x>
+       <y>500</y>
        <width>81</width>
        <height>51</height>
       </rect>
@@ -554,9 +566,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Device_Horizontal_End">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>470</y>
-       <width>51</width>
+       <x>290</x>
+       <y>530</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -581,9 +593,9 @@
     <widget class="QCheckBox" name="checkBox_Device_Buffer_End">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>470</y>
-       <width>81</width>
+       <x>360</x>
+       <y>530</y>
+       <width>111</width>
        <height>22</height>
       </rect>
      </property>
@@ -599,9 +611,9 @@
     <widget class="QLabel" name="label_Device_Horizontal_End">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>470</y>
-       <width>81</width>
+       <x>180</x>
+       <y>530</y>
+       <width>101</width>
        <height>22</height>
       </rect>
      </property>
@@ -617,9 +629,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Device_Horizontal_Start">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>440</y>
-       <width>51</width>
+       <x>290</x>
+       <y>500</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -639,9 +651,9 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>40</y>
-       <width>601</width>
-       <height>391</height>
+       <y>60</y>
+       <width>681</width>
+       <height>421</height>
       </rect>
      </property>
      <property name="font">
@@ -657,8 +669,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>470</y>
-       <width>71</width>
+       <y>530</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -674,9 +686,9 @@
     <widget class="QLabel" name="label_Device_Horizontal_Start">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>440</y>
-       <width>81</width>
+       <x>180</x>
+       <y>500</y>
+       <width>101</width>
        <height>22</height>
       </rect>
      </property>
@@ -693,8 +705,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>440</y>
-       <width>71</width>
+       <y>500</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -710,9 +722,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Device_Vertical_End">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>470</y>
-       <width>51</width>
+       <x>110</x>
+       <y>530</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -734,9 +746,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_Device_Vertical_Start">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>440</y>
-       <width>51</width>
+       <x>110</x>
+       <y>500</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -759,7 +771,7 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
+       <y>30</y>
        <width>91</width>
        <height>20</height>
       </rect>
@@ -784,9 +796,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>530</y>
-      <width>1001</width>
-      <height>121</height>
+      <y>590</y>
+      <width>1211</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="title">
@@ -795,9 +807,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_P_1">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>20</y>
-       <width>68</width>
+       <x>50</x>
+       <y>40</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -814,22 +826,25 @@
     <widget class="QLabel" name="label_PID_P_1">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
-       <width>16</width>
+       <x>10</x>
+       <y>40</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>P1:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_I_1">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>20</y>
-       <width>68</width>
+       <x>175</x>
+       <y>40</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -843,22 +858,25 @@
     <widget class="QLabel" name="label_PID_I_1">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>20</y>
-       <width>16</width>
+       <x>140</x>
+       <y>40</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>I1:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_D_1">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>20</y>
-       <width>68</width>
+       <x>305</x>
+       <y>40</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -875,22 +893,25 @@
     <widget class="QLabel" name="label_PID_D_1">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>20</y>
-       <width>16</width>
+       <x>270</x>
+       <y>40</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>D1:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="label_PID_Sampling">
      <property name="geometry">
       <rect>
-       <x>342</x>
-       <y>20</y>
-       <width>51</width>
+       <x>410</x>
+       <y>40</y>
+       <width>81</width>
        <height>22</height>
       </rect>
      </property>
@@ -904,9 +925,9 @@
     <widget class="QSpinBox" name="spinBox_PID_Sampling_Hz">
      <property name="geometry">
       <rect>
-       <x>400</x>
-       <y>20</y>
-       <width>41</width>
+       <x>500</x>
+       <y>40</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -923,9 +944,9 @@
     <widget class="QLabel" name="label_PID_Sampling_Hz">
      <property name="geometry">
       <rect>
-       <x>452</x>
-       <y>20</y>
-       <width>21</width>
+       <x>570</x>
+       <y>40</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
@@ -936,9 +957,9 @@
     <widget class="QGroupBox" name="groupBox_PID_Test">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>10</y>
-       <width>491</width>
+       <x>600</x>
+       <y>30</y>
+       <width>591</width>
        <height>61</height>
       </rect>
      </property>
@@ -953,8 +974,8 @@
      <widget class="QPushButton" name="pushButton_PID_Test_Oscillate">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>20</y>
+        <x>500</x>
+        <y>30</y>
         <width>71</width>
         <height>22</height>
        </rect>
@@ -974,9 +995,9 @@
      <widget class="QLabel" name="label_PID_Test_Pos_A_Pct">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>20</y>
-        <width>21</width>
+        <x>160</x>
+        <y>30</y>
+        <width>31</width>
         <height>22</height>
        </rect>
       </property>
@@ -993,8 +1014,8 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
-        <width>41</width>
+        <y>30</y>
+        <width>61</width>
         <height>22</height>
        </rect>
       </property>
@@ -1006,13 +1027,16 @@
       <property name="text">
        <string>Pos. A:</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="label_PID_Test_Pos_B">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>20</y>
-        <width>41</width>
+        <x>190</x>
+        <y>30</y>
+        <width>61</width>
         <height>22</height>
        </rect>
       </property>
@@ -1024,13 +1048,16 @@
       <property name="text">
        <string>Pos. B:</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="label_PID_Test_Pos_B_Pct">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>20</y>
-        <width>21</width>
+        <x>310</x>
+        <y>30</y>
+        <width>31</width>
         <height>22</height>
        </rect>
       </property>
@@ -1046,9 +1073,9 @@
      <widget class="QLabel" name="label_Pid_Test_Time_Sec">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>20</y>
-        <width>31</width>
+        <x>450</x>
+        <y>30</y>
+        <width>41</width>
         <height>22</height>
        </rect>
       </property>
@@ -1064,9 +1091,9 @@
      <widget class="QLabel" name="label_PID_Test_Time">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>20</y>
-        <width>31</width>
+        <x>350</x>
+        <y>30</y>
+        <width>51</width>
         <height>22</height>
        </rect>
       </property>
@@ -1078,13 +1105,16 @@
       <property name="text">
        <string>Time:</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
      </widget>
      <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_Test_Pos_A">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>20</y>
-        <width>51</width>
+        <x>80</x>
+        <y>30</y>
+        <width>71</width>
         <height>22</height>
        </rect>
       </property>
@@ -1103,8 +1133,8 @@
      <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_Test_Pos_B">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>20</y>
+        <x>250</x>
+        <y>30</y>
         <width>51</width>
         <height>22</height>
        </rect>
@@ -1124,8 +1154,8 @@
      <widget class="QSpinBox" name="spinBox_PID_Test_Time">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>20</y>
+        <x>400</x>
+        <y>30</y>
         <width>41</width>
         <height>22</height>
        </rect>
@@ -1149,9 +1179,9 @@
     <widget class="QCheckBox" name="checkBox_PID_P_On_M">
      <property name="geometry">
       <rect>
-       <x>490</x>
-       <y>80</y>
-       <width>171</width>
+       <x>620</x>
+       <y>100</y>
+       <width>241</width>
        <height>21</height>
       </rect>
      </property>
@@ -1165,9 +1195,9 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>81</y>
-       <width>81</width>
+       <x>880</x>
+       <y>101</y>
+       <width>151</width>
        <height>20</height>
       </rect>
      </property>
@@ -1181,22 +1211,25 @@
     <widget class="QLabel" name="label_PID_Split_1">
      <property name="geometry">
       <rect>
-       <x>350</x>
-       <y>50</y>
-       <width>41</width>
+       <x>410</x>
+       <y>70</y>
+       <width>81</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>Split 1:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="label_PID_Split_1_P">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>50</y>
-       <width>21</width>
+       <x>570</x>
+       <y>70</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
@@ -1207,9 +1240,9 @@
     <widget class="QLabel" name="label_PID_Split_2_P">
      <property name="geometry">
       <rect>
-       <x>450</x>
-       <y>80</y>
-       <width>21</width>
+       <x>570</x>
+       <y>100</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
@@ -1220,9 +1253,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_I_2">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>50</y>
-       <width>68</width>
+       <x>175</x>
+       <y>70</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1236,22 +1269,25 @@
     <widget class="QLabel" name="label_PID_D_2">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>50</y>
-       <width>16</width>
+       <x>270</x>
+       <y>70</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>D2:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_D_2">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>50</y>
-       <width>68</width>
+       <x>305</x>
+       <y>70</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1268,35 +1304,41 @@
     <widget class="QLabel" name="label_PID_I_2">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>50</y>
-       <width>16</width>
+       <x>140</x>
+       <y>70</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>I2:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="label_PID_Split_2">
      <property name="geometry">
       <rect>
-       <x>350</x>
-       <y>80</y>
-       <width>41</width>
+       <x>410</x>
+       <y>100</y>
+       <width>81</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>Split 2:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_P_2">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>50</y>
-       <width>68</width>
+       <x>50</x>
+       <y>70</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1313,22 +1355,25 @@
     <widget class="QLabel" name="label_PID_P_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>16</width>
+       <x>10</x>
+       <y>70</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>P2:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_I_3">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>80</y>
-       <width>68</width>
+       <x>175</x>
+       <y>100</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1342,22 +1387,25 @@
     <widget class="QLabel" name="label_PID_D_3">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>80</y>
-       <width>16</width>
+       <x>270</x>
+       <y>100</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>D3:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_D_3">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>80</y>
-       <width>68</width>
+       <x>305</x>
+       <y>100</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1374,22 +1422,25 @@
     <widget class="QLabel" name="label_PID_I_3">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>80</y>
-       <width>16</width>
+       <x>140</x>
+       <y>100</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>I3:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_P_3">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>80</y>
-       <width>68</width>
+       <x>50</x>
+       <y>100</y>
+       <width>91</width>
        <height>22</height>
       </rect>
      </property>
@@ -1406,22 +1457,25 @@
     <widget class="QLabel" name="label_PID_P_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>80</y>
-       <width>16</width>
+       <x>10</x>
+       <y>100</y>
+       <width>31</width>
        <height>22</height>
       </rect>
      </property>
      <property name="text">
       <string>P3:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
     </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_Split_1">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>50</y>
-       <width>51</width>
+       <x>500</x>
+       <y>70</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -1438,9 +1492,9 @@
     <widget class="QDoubleSpinBox" name="doubleSpinBox_PID_Split_2">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>80</y>
-       <width>51</width>
+       <x>500</x>
+       <y>100</y>
+       <width>61</width>
        <height>22</height>
       </rect>
      </property>
@@ -1461,10 +1515,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>770</x>
       <y>10</y>
-      <width>341</width>
-      <height>131</height>
+      <width>461</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="title">
@@ -1473,9 +1527,9 @@
     <widget class="QSpinBox" name="spinBox_Potentiometer_Start_Margin">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>30</y>
-       <width>51</width>
+       <x>130</x>
+       <y>40</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
@@ -1493,8 +1547,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
-       <width>71</width>
+       <y>40</y>
+       <width>101</width>
        <height>22</height>
       </rect>
      </property>
@@ -1506,8 +1560,8 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>60</y>
-       <width>64</width>
+       <y>70</y>
+       <width>101</width>
        <height>22</height>
       </rect>
      </property>
@@ -1518,9 +1572,9 @@
     <widget class="QSpinBox" name="spinBox_Potentiometer_End_Margin">
      <property name="geometry">
       <rect>
-       <x>90</x>
-       <y>60</y>
-       <width>51</width>
+       <x>130</x>
+       <y>70</y>
+       <width>71</width>
        <height>22</height>
       </rect>
      </property>
@@ -1540,10 +1594,10 @@
      </property>
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>220</x>
        <y>30</y>
-       <width>71</width>
-       <height>81</height>
+       <width>121</width>
+       <height>101</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -1560,9 +1614,9 @@
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>90</y>
-       <width>101</width>
-       <height>21</height>
+       <y>100</y>
+       <width>181</width>
+       <height>20</height>
       </rect>
      </property>
      <property name="text">
@@ -1572,9 +1626,9 @@
     <widget class="QPushButton" name="pushButton_Potentiometer_Set_Start">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>30</y>
-       <width>71</width>
+       <x>360</x>
+       <y>40</y>
+       <width>81</width>
        <height>31</height>
       </rect>
      </property>
@@ -1585,9 +1639,9 @@
     <widget class="QPushButton" name="pushButton_Potentiometer_Set_End">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>80</y>
-       <width>71</width>
+       <x>360</x>
+       <y>90</y>
+       <width>81</width>
        <height>31</height>
       </rect>
      </property>
@@ -1602,8 +1656,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1041</width>
-     <height>22</height>
+     <width>1251</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

@@ -4,7 +4,7 @@
 //Constructor
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    this->setFixedSize(1041, 691);
+    this->setFixedSize(1251, 772);
     ui->setupUi(this);
 
     //PID Test oscillation timer
